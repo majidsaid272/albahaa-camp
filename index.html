@@ -335,7 +335,7 @@ a{color:#E8A04A}a:hover{opacity:.9}
 <a class="wa-float" href="https://wa.me/96897663361">احجز واتساب</a>
 <script>
 (function(){
-var SHEET='1ywBx7sW4FMqo60nnzHSE1Q9p65B_IkoyKiCDKx5j1_I', WA='96897663361';
+var SHEET='1AjkBk-za4Zcdh5C0OWOXiupXxVEVEEnas-KJgYrUzFY', WA='96897663361';
 var MONTHS=['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
 var DAYS=['الأحد','الاثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];
 var booked={}, today=new Date(); today.setHours(0,0,0,0);
@@ -379,9 +379,12 @@ function panel(dt){
  if(window.innerWidth<720)document.getElementById('calPanel').scrollIntoView({behavior:'smooth',block:'nearest'})}
 window.__albahaaSheet=function(res){
  try{ booked={}; var rows=(res.table&&res.table.rows)||[];
-  rows.forEach(function(r){var c=r.c||[];var dt=parseDate(c[0]);if(!dt)return;
+  var cols=(res.table&&res.table.cols)||[], iD=0, iA=1, iP=2;
+  cols.forEach(function(c,i){var l=String(c.label||'');
+   if(/تاريخ/.test(l)||c.type==='date')iD=i; else if(/صباح/.test(l))iA=i; else if(/مساء/.test(l))iP=i});
+  rows.forEach(function(r){var c=r.c||[];var dt=parseDate(c[iD]);if(!dt)return;
    var k=key(dt), cur=booked[k]||{};
-   if(c[1]&&isBooked(c[1].v))cur.am=true; if(c[2]&&isBooked(c[2].v))cur.pm=true; booked[k]=cur});
+   if(c[iA]&&isBooked(c[iA].v))cur.am=true; if(c[iP]&&isBooked(c[iP].v))cur.pm=true; booked[k]=cur});
   document.getElementById('calStatus').textContent='يتم تحديث الحجوزات باستمرار. للتأكيد النهائي تواصل معنا عبر واتساب.';
  }catch(e){fail()}
  render(); if(sel){var p=sel.split('-');panel(new Date(+p[0],p[1]-1,+p[2]))}
