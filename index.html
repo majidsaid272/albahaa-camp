@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>مخيم البهاء الشتوي | Al Bahaa Camp</title>
+<meta name="description" content="مخيم البهاء الشتوي: مجالس عربية، بيوت شعر، جناح أبيض، شبّة نار وسينما خارجية. للحجز واتساب 97663361">
+<meta property="og:title" content="مخيم البهاء الشتوي">
+<meta property="og:description" content="مجالس عربية، بيوت شعر، شبّة نار وسينما تحت النجوم. للحجز: 97663361">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@500;600;700&family=Tajawal:wght@400;500;700&display=swap">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+section{scroll-margin-top:80px}
+body{margin:0;background:#111419}
+a{color:#E8A04A}a:hover{opacity:.9}
+.wa-float{position:fixed;left:16px;bottom:16px;z-index:10;background:#25D366;color:#0b2e17;font-family:'Tajawal',sans-serif;font-weight:700;text-decoration:none;padding:12px 20px;border-radius:999px;box-shadow:0 6px 20px rgba(0,0,0,.35);display:none}
+@media (max-width:720px){
+ .navlink{display:none}
+ .hero-grid{height:420px!important}
+ .wa-float{display:inline-block}
+ body{padding-bottom:72px}
+}
+
+.cal-wrap{display:flex;flex-wrap:wrap;gap:24px;align-items:flex-start;font-family:'Tajawal',sans-serif}
+.cal{flex:2 1 460px;background:#181C23;border-radius:22px;padding:22px}
+.cal-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+.cal-head h3{margin:0;font-family:'El Messiri',serif;font-size:24px;color:#F3EBDD}
+.cal-nav{width:44px;height:44px;border-radius:50%;border:1.5px solid #4A5466;background:transparent;color:#F3EBDD;font-size:26px;line-height:1;cursor:pointer}
+.cal-nav:disabled{opacity:.3;cursor:default}
+.cal-week,.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.cal-week span{text-align:center;color:#B9B0A0;font-size:13px;padding:4px 0}
+.cal-day{position:relative;min-height:64px;border-radius:12px;border:1.5px solid transparent;background:#20252E;color:#F3EBDD;font:inherit;font-weight:700;font-size:16px;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:8px 4px 6px}
+.cal-day:hover{border-color:#4A5466}
+.cal-day.sel{border-color:#E8A04A}
+.cal-day.past{opacity:.35;cursor:default}
+.cal-day.empty{background:transparent;cursor:default}
+.bars{display:flex;flex-direction:column;gap:3px;width:70%}
+.bars i{display:block;height:5px;border-radius:3px}
+.free{background:#4CAF7A}.booked{background:#C2453F}
+.cal-legend{display:flex;flex-wrap:wrap;gap:16px;margin-top:14px;color:#CFC6B5;font-size:14px;align-items:center}
+.dot{display:inline-block;width:12px;height:12px;border-radius:3px;margin-left:6px;vertical-align:-1px}
+.cal-legend-note{color:#B9B0A0}
+.cal-status{margin:10px 0 0;color:#B9B0A0;font-size:14px}
+.cal-panel{flex:1 1 280px;background:#20252E;border-radius:22px;padding:26px;display:flex;flex-direction:column;gap:12px;color:#F3EBDD}
+.cal-panel h3{margin:0;font-family:'El Messiri',serif;font-size:22px}
+.slots{display:flex;flex-direction:column;gap:10px}
+.slot{display:flex;align-items:center;justify-content:space-between;gap:10px;background:#181C23;border-radius:14px;padding:12px 14px}
+.slot b{font-size:17px}
+.slot a{background:#E8A04A;color:#111419;text-decoration:none;font-weight:700;padding:9px 18px;border-radius:999px}
+.slot .tag{color:#E6908B;font-weight:700}
+@media (max-width:720px){.cal{padding:14px}.cal-day{min-height:54px;font-size:14px}.cal-week,.cal-grid{gap:4px}}
+</style>
+</head>
+<body>
+<div dir="rtl" lang="ar" style="background: #111419; color: #F3EBDD; font-family: 'Tajawal', sans-serif; font-size: 17px; line-height: 1.8">
+
+<header style="position: sticky; top: 0; z-index: 5; background: rgba(17,20,25,0.92); border-bottom: 1px solid #232A35">
+<div style="max-width: 1160px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px">
+<a href="#top" style="display: flex; align-items: center; gap: 12px; color: #F3EBDD; text-decoration: none">
+<svg aria-hidden="true" width="34" height="34" viewBox="0 0 36 36" fill="none" stroke="#E8A04A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 L4 30 H32 Z"></path><path d="M13 30 L18 20 L23 30"></path><path d="M27 8 C27 12 28 14 30 15"></path></svg>
+<span style="display: flex; flex-direction: column; line-height: 1.2"><span style="font-family: 'El Messiri', serif; font-weight: 700; font-size: 23px">مخيم البهاء</span><span style="font-size: 12px; letter-spacing: 2px; color: #B9B0A0; direction: ltr; text-align: right">AL BAHAA CAMP</span></span>
+</a>
+<nav class="topnav" aria-label="روابط الصفحة" style="display: flex; flex-wrap: wrap; align-items: center; gap: 22px">
+<a class="navlink" href="#spaces" style="color: #F3EBDD; text-decoration: none; padding: 10px 0">الجلسات</a>
+<a class="navlink" href="#videos" style="color: #F3EBDD; text-decoration: none; padding: 10px 0">المقاطع</a>
+<a class="navlink" href="#amenities" style="color: #F3EBDD; text-decoration: none; padding: 10px 0">المرافق</a>
+<a class="navlink" href="#booking" style="color: #F3EBDD; text-decoration: none; padding: 10px 0">التوفر</a>
+<a class="navlink" href="#gallery" style="color: #F3EBDD; text-decoration: none; padding: 10px 0">الصور</a>
+<a href="https://wa.me/96897663361" style="background: #E8A04A; color: #111419; text-decoration: none; font-weight: 700; padding: 10px 22px; border-radius: 999px">احجز الآن</a>
+</nav>
+</div>
+</header>
+
+<section id="top" style="max-width: 1160px; margin: 0 auto; padding: 56px 24px 64px; display: flex; flex-wrap: wrap; align-items: center; gap: 48px">
+<div style="flex: 1 1 380px; display: flex; flex-direction: column; gap: 20px">
+<span style="align-self: flex-start; border: 1px solid #3A4352; color: #E8A04A; font-weight: 700; font-size: 15px; padding: 4px 16px; border-radius: 999px">موسم الشتاء ٢٠٢٦ – ٢٠٢٧</span>
+<h1 style="margin: 0; font-family: 'El Messiri', serif; font-weight: 700; font-size: clamp(40px, 6vw, 68px); line-height: 1.2">ليالي الشتاء<br>أجمل في <span style="color: #E8A04A">مخيم البهاء</span></h1>
+<p style="margin: 0; color: #CFC6B5; font-size: 19px; max-width: 500px">مجالس عربية بالسدو الأحمر، بيوت شعر تراثية، جناح أبيض عصري، شبّة نار وسينما تحت النجوم. كل ما تحتاجه لسهرة عائلية أو مناسبة لا تُنسى، في مكان واحد.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 14px; margin-top: 6px">
+<a href="https://wa.me/96897663361" style="background: #E8A04A; color: #111419; text-decoration: none; font-weight: 700; font-size: 18px; padding: 14px 32px; border-radius: 999px">احجز عبر واتساب</a>
+<a href="#booking" style="border: 1.5px solid #4A5466; color: #F3EBDD; text-decoration: none; font-weight: 500; font-size: 18px; padding: 13px 28px; border-radius: 999px">شوف الأيام المتاحة</a>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 28px; margin-top: 14px; padding-top: 22px; border-top: 1px solid #232A35">
+<div style="display: flex; flex-direction: column"><span style="font-family: 'El Messiri', serif; font-weight: 700; font-size: 30px; color: #E8A04A">٦</span><span style="color: #B9B0A0; font-size: 15px">جلسات وخيام مختلفة</span></div>
+<div style="display: flex; flex-direction: column"><span style="font-family: 'El Messiri', serif; font-weight: 700; font-size: 30px; color: #E8A04A">سينما</span><span style="color: #B9B0A0; font-size: 15px">شاشة عرض خارجية</span></div>
+<div style="display: flex; flex-direction: column"><span style="font-family: 'El Messiri', serif; font-weight: 700; font-size: 30px; color: #E8A04A">شبّة</span><span style="color: #B9B0A0; font-size: 15px">نار وجلسات حولها</span></div>
+</div>
+</div>
+<div class="hero-grid" style="flex: 1 1 420px; display: grid; grid-template-columns: 1.25fr 1fr; grid-template-rows: 1fr 1fr; gap: 14px; height: 560px">
+<img src="img/clip-walk.webp" alt="جولة متحركة داخل المجلس الكبير" style="grid-row: 1 / 3; width: 100%; height: 100%; object-fit: cover; border-radius: 24px; display: block">
+<img src="img/majlis.webp" alt="مجلس بالسدو الأحمر تحت مظلة بيضاء" style="width: 100%; height: 100%; object-fit: cover; border-radius: 24px; display: block">
+<img src="img/logofire.webp" alt="شعار مخيم البهاء وشبّة النار" style="width: 100%; height: 100%; object-fit: cover; border-radius: 24px; display: block">
+</div>
+</section>
+
+<section id="spaces" style="background: #181C23; padding: 80px 24px">
+<div style="max-width: 1160px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 8px; max-width: 640px">
+<span style="color: #E8A04A; font-weight: 700">الجلسات والخيام</span>
+<h2 style="margin: 0; font-family: 'El Messiri', serif; font-weight: 700; font-size: clamp(30px, 4vw, 44px); line-height: 1.3">اختر جلستك المفضلة</h2>
+<p style="margin: 0; color: #CFC6B5">لكل جلسة طابعها الخاص، من التراثي الأصيل إلى العصري الهادئ.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px">
+
+<article style="background: #20252E; border-radius: 22px; overflow: hidden; display: flex; flex-direction: column">
+<img loading="lazy" src="img/majlis2.webp" alt="المجلس الكبير بالسدو الأحمر والإضاءة الدافئة" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block">
+<div style="padding: 22px 24px 26px; display: flex; flex-direction: column; gap: 10px">
+<h3 style="margin: 0; font-family: 'El Messiri', serif; font-size: 24px; font-weight: 700">المجلس الكبير</h3>
+<p style="margin: 0; color: #CFC6B5">جلسة عربية واسعة بفرش السدو الأحمر والمساند، تحت مظلة بستائر بيضاء وإضاءة دافئة. مثالية للتجمعات الكبيرة.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px"><span style="background: #2C3340; border-radius: 999px; padding: 2px 12px; font-size: 14px">جلسة أرضية</span><span style="background: #2C3340; border-radius: 999px; padding: 2px 12px; font-size: 14px">مظلة</span><span style="background: #2C3340; border-radius: 999px; padding: 2px 12px; font-size: 14px">إضاءة</span></div>
+</div>
+</article>
+
+<article style="background: #20252E; border-radius: 22px; overflow: hidden; display: flex; flex-direction: column">
+<img loading="lazy" src="img/majlis.webp" alt="مجلس بكنب وطاولة وستائر بيضاء" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block">
+<div style="padding: 22px 24px 26px; display: flex; flex-direction: column; gap: 10px">
+<h3 style="margin: 0; font-family: 'El Messiri', serif; font-size: 24px; font-weight: 700">مجلس الستائر البيضاء</h3>
+<p style="margin: 0; color: #CFC6B5">كنب مريح وطاولة وسط، وفرش أحمر وثريات معلّقة، يجمع الطابع العربي مع لمسة عصرية.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px"><span style="background: #2C3340; border-radius: 999px; padding: 2px 12px; font-size: 14px">كنب</span><span style="background: #2C3340; border-radius: 999px; padding: 2px 12px; font-size: 14px">طاولة</span><span style="background: #2C3340; border-radius: 999px; padding: 2px 12px; font-size: 14px">ثريات</span></div>
+</div>
+</article>
+
+<article style="background: #20252E; border-radius: 22px; overflow: hidden; display: flex; flex-direction: column">
+<img loading="lazy" src="img/lounge.webp" alt="الجناح الأبيض بكنب عصري على العشب" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block">
+<div style="padding: 22px 24px 26px; display: flex; flex-direction: column; gap: 10px">
+<h3 style="margin: 0; font-family: 'El Messiri', serif; font-size: 24px; font-weight: 700">الجناح الأبيض</h3>
+<p style="margin: 0; color: #CFC6B5">خيمة بيضاء مضيئة بكنب عصري ونباتات وستائر شفافة، على أرضية عشب. أجواء هادئة وأنيقة.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px"><span style="background: #2C3340; border-radius: 999px; padding: 2px 12px; font-size: 14px">عصري</span><span style="background: #2C3340; border-radius: 999px; padding: 2px 12px; font-size: 14px">كنب</span><span style="background: #2C3340; border-radius: 999px; padding: 2px 12px; font-size: 14px">عشب</span></div>
+</div>
+</article>
+
+<article style="background: #20252E; border-radius: 22px; overflow: hidden; display: flex; flex-direction: column">
+<img loading="lazy" src="img/redtent.webp" alt="بيت شعر أحمر مفروش على العشب" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block">
+<div style="padding: 22px 24px 26px; display: flex; flex-direction: column; gap: 10px">
+<h3 style="margin: 0; font-family: 'El Messiri', serif; font-size: 24px; font-weight: 700">بيت الشعر الأحمر</h3>
+<p style="margin: 0; color: #CFC6B5">خيمة تراثية بنقوش السدو الحمراء ومفارش أرضية، تطل على شبّة النار. روح البر الأصيلة.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px"><span style="background: #2C3340; border-radius: 999px; padding: 2px 12px; font-size: 14px">تراثي</span><span style="background: #2C3340; border-radius: 999px; padding: 2px 12px; font-size: 14px">قرب النار</span></div>
+</div>
+</article>
+
+<article style="background: #20252E; border-radius: 22px; overflow: hidden; display: flex; flex-direction: column">
+<img loading="lazy" src="img/colortent.webp" alt="خيمة تراثية بنقوش ملونة وجلسة أرضية" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block">
+<div style="padding: 22px 24px 26px; display: flex; flex-direction: column; gap: 10px">
+<h3 style="margin: 0; font-family: 'El Messiri', serif; font-size: 24px; font-weight: 700">الخيمة الملوّنة</h3>
+<p style="margin: 0; color: #CFC6B5">خيمة بنقوش تراثية زاهية وجلسة أرضية بالمساند والسجاد، دافئة وحميمة لليالي الباردة.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px"><span style="background: #2C3340; border-radius: 999px; padding: 2px 12px; font-size: 14px">تراثي</span><span style="background: #2C3340; border-radius: 999px; padding: 2px 12px; font-size: 14px">جلسة أرضية</span></div>
+</div>
+</article>
+
+<article style="background: #20252E; border-radius: 22px; overflow: hidden; display: flex; flex-direction: column">
+<img loading="lazy" src="img/pink.webp" alt="ركن مزيّن بالورود الوردية والشموع" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block">
+<div style="padding: 22px 24px 26px; display: flex; flex-direction: column; gap: 10px">
+<h3 style="margin: 0; font-family: 'El Messiri', serif; font-size: 24px; font-weight: 700">ركن المناسبات</h3>
+<p style="margin: 0; color: #CFC6B5">ركن مزيّن بالورود والشموع والستائر الوردية، مناسب للتصوير وأعياد الميلاد والمناسبات الخاصة.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px"><span style="background: #2C3340; border-radius: 999px; padding: 2px 12px; font-size: 14px">تصوير</span><span style="background: #2C3340; border-radius: 999px; padding: 2px 12px; font-size: 14px">مناسبات</span></div>
+</div>
+</article>
+
+</div>
+</div>
+</section>
+
+<section id="videos" style="padding: 80px 24px">
+<div style="max-width: 1160px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 8px; max-width: 600px">
+<span style="color: #E8A04A; font-weight: 700">مقاطع من المخيم</span>
+<h2 style="margin: 0; font-family: 'El Messiri', serif; font-weight: 700; font-size: clamp(30px, 4vw, 44px); line-height: 1.3">عِش الأجواء قبل أن تصل</h2>
+</div>
+<a href="https://www.instagram.com/camp.albahaa" style="border: 1.5px solid #4A5466; color: #F3EBDD; text-decoration: none; font-weight: 500; padding: 10px 24px; border-radius: 999px">المزيد على إنستغرام</a>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px">
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
+<img loading="lazy" src="img/clip-fire.webp" alt="مقطع متحرك لشبّة النار أمام شعار المخيم" style="width: 100%; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 20px; display: block">
+<figcaption style="font-weight: 700">شبّة النار</figcaption>
+</figure>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
+<img loading="lazy" src="img/clip-walk.webp" alt="مقطع متحرك لجولة في المجلس الكبير" style="width: 100%; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 20px; display: block">
+<figcaption style="font-weight: 700">جولة في المجلس</figcaption>
+</figure>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
+<img loading="lazy" src="img/clip-swing.webp" alt="مقطع متحرك للمرجيحة تحت قوس الورد" style="width: 100%; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 20px; display: block">
+<figcaption style="font-weight: 700">مرجيحة قوس الورد</figcaption>
+</figure>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
+<img loading="lazy" src="img/clip-cinema.webp" alt="مقطع متحرك للسينما الخارجية" style="width: 100%; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 20px; display: block">
+<figcaption style="font-weight: 700">السينما الخارجية</figcaption>
+</figure>
+</div>
+</div>
+</section>
+
+<section id="amenities" style="background: #181C23; padding: 80px 24px">
+<div style="max-width: 1160px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="color: #E8A04A; font-weight: 700">المرافق والتجارب</span>
+<h2 style="margin: 0; font-family: 'El Messiri', serif; font-weight: 700; font-size: clamp(30px, 4vw, 44px); line-height: 1.3">كل تفصيل مجهّز لراحتك</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px">
+<div style="background: #20252E; border-radius: 18px; padding: 24px; display: flex; flex-direction: column; gap: 8px">
+<svg aria-hidden="true" width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="#E8A04A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4 C22 11 22 17 19 22 H13 C10 17 11 11 16 4 Z"></path><path d="M7 28 L25 23 M7 23 L25 28"></path></svg>
+<h3 style="margin: 0; font-size: 20px; font-weight: 700">شبّة نار</h3>
+<p style="margin: 0; color: #CFC6B5">موقد بالحجارة ومقاعد حوله للسهر في ليالي الشتاء.</p>
+</div>
+<div style="background: #20252E; border-radius: 18px; padding: 24px; display: flex; flex-direction: column; gap: 8px">
+<svg aria-hidden="true" width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="#E8A04A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="24" height="15" rx="2"></rect><path d="M16 20 V26 M10 27 H22"></path></svg>
+<h3 style="margin: 0; font-size: 20px; font-weight: 700">سينما خارجية</h3>
+<p style="margin: 0; color: #CFC6B5">شاشة عرض كبيرة وجلسة أرضية بالمساند على العشب.</p>
+</div>
+<div style="background: #20252E; border-radius: 18px; padding: 24px; display: flex; flex-direction: column; gap: 8px">
+<svg aria-hidden="true" width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="#E8A04A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3 V8"></path><path d="M9 14 C9 9 23 9 23 14 V22 C23 27 9 27 9 22 Z"></path></svg>
+<h3 style="margin: 0; font-size: 20px; font-weight: 700">مرجيحة قوس الورد</h3>
+<p style="margin: 0; color: #CFC6B5">مرجيحة معلّقة تحت قوس من الورود، ركن مميز للصور.</p>
+</div>
+<div style="background: #20252E; border-radius: 18px; padding: 24px; display: flex; flex-direction: column; gap: 8px">
+<svg aria-hidden="true" width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="#E8A04A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="9" width="24" height="17" rx="3"></rect><circle cx="16" cy="17" r="5"></circle><path d="M11 9 L13 5 H19 L21 9"></path></svg>
+<h3 style="margin: 0; font-size: 20px; font-weight: 700">أركان تصوير</h3>
+<p style="margin: 0; color: #CFC6B5">ديكورات بالورد والشموع والفوانيس تناسب الصور والمناسبات.</p>
+</div>
+<div style="background: #20252E; border-radius: 18px; padding: 24px; display: flex; flex-direction: column; gap: 8px">
+<svg aria-hidden="true" width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="#E8A04A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4 V8"></path><path d="M10 8 H22 L20 18 H12 Z"></path><path d="M14 22 H18"></path></svg>
+<h3 style="margin: 0; font-size: 20px; font-weight: 700">إضاءة دافئة</h3>
+<p style="margin: 0; color: #CFC6B5">فوانيس معلّقة وإضاءة أرضية على الممرات والجدران.</p>
+</div>
+<div style="background: #20252E; border-radius: 18px; padding: 24px; display: flex; flex-direction: column; gap: 8px">
+<svg aria-hidden="true" width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="#E8A04A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 26 C10 22 22 22 28 26"></path><path d="M16 24 V10"></path><path d="M16 14 C12 10 8 11 6 13 M16 12 C20 8 24 9 26 11"></path></svg>
+<h3 style="margin: 0; font-size: 20px; font-weight: 700">عشب ونباتات</h3>
+<p style="margin: 0; color: #CFC6B5">أرضيات عشب ومساحات خضراء ونباتات حول الجلسات.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="gallery" style="padding: 80px 24px">
+<div style="max-width: 1160px; margin: 0 auto; display: flex; flex-direction: column; gap: 36px">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="color: #E8A04A; font-weight: 700">معرض الصور</span>
+<h2 style="margin: 0; font-family: 'El Messiri', serif; font-weight: 700; font-size: clamp(30px, 4vw, 44px); line-height: 1.3">لمحات من ليالي البهاء</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); grid-auto-rows: 210px; gap: 14px">
+<img loading="lazy" src="img/entrance.webp" alt="مدخل مخيم البهاء ولوحة الاسم" style="grid-row: span 2; width: 100%; height: 100%; object-fit: cover; border-radius: 18px; display: block">
+<img loading="lazy" src="img/corner.webp" alt="ركن جلوس بفانوس معلّق ونباتات" style="grid-row: span 2; width: 100%; height: 100%; object-fit: cover; border-radius: 18px; display: block">
+<img loading="lazy" src="img/swing.webp" alt="مرجيحة معلّقة تحت قوس الورد" style="grid-row: span 2; width: 100%; height: 100%; object-fit: cover; border-radius: 18px; display: block">
+<img loading="lazy" src="img/firepit.webp" alt="شبّة النار أمام بيت الشعر" style="grid-row: span 2; width: 100%; height: 100%; object-fit: cover; border-radius: 18px; display: block">
+<img loading="lazy" src="img/cinema.webp" alt="شاشة السينما الخارجية" style="grid-row: span 2; width: 100%; height: 100%; object-fit: cover; border-radius: 18px; display: block">
+<img loading="lazy" src="img/logo.webp" alt="لوحة الترحيب بجانب سياج القصب" style="grid-row: span 2; width: 100%; height: 100%; object-fit: cover; border-radius: 18px; display: block">
+</div>
+</div>
+</section>
+
+<section id="booking" style="padding: 80px 24px">
+<div style="max-width: 1160px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="color: #E8A04A; font-weight: 700">التوفر والحجز</span>
+<h2 style="margin: 0; font-family: 'El Messiri', serif; font-weight: 700; font-size: clamp(30px, 4vw, 44px); line-height: 1.3">اختر اليوم والفترة</h2>
+<p style="margin: 0; color: #CFC6B5">فترتان يومياً: صباحية ومسائية. اضغط على اليوم لرؤية الفترات المتاحة والحجز عبر واتساب.</p>
+</div>
+<div class="cal-wrap">
+<div class="cal">
+<div class="cal-head">
+<button type="button" id="calNext" class="cal-nav" aria-label="الشهر التالي">&#8250;</button>
+<h3 id="calTitle"></h3>
+<button type="button" id="calPrev" class="cal-nav" aria-label="الشهر السابق">&#8249;</button>
+</div>
+<div class="cal-week"><span>أحد</span><span>اثنين</span><span>ثلاثاء</span><span>أربعاء</span><span>خميس</span><span>جمعة</span><span>سبت</span></div>
+<div id="calGrid" class="cal-grid" role="grid"></div>
+<div class="cal-legend">
+<span><i class="dot free"></i>متاح</span><span><i class="dot booked"></i>محجوز</span>
+<span class="cal-legend-note">الشريط العلوي: الصباح · السفلي: المساء</span>
+</div>
+<p id="calStatus" class="cal-status">جاري تحميل الحجوزات…</p>
+</div>
+<div class="cal-panel" id="calPanel">
+<h3 id="panelDate">اختر يوماً من التقويم</h3>
+<p id="panelHint" style="margin:0;color:#CFC6B5">ستظهر هنا الفترات المتاحة لليوم الذي تختاره.</p>
+<div id="panelSlots" class="slots"></div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="prices" style="background: #181C23; padding: 80px 24px">
+<div style="max-width: 1160px; margin: 0 auto; display: flex; flex-direction: column; gap: 36px">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="color: #E8A04A; font-weight: 700">الأسعار</span>
+<h2 style="margin: 0; font-family: 'El Messiri', serif; font-weight: 700; font-size: clamp(30px, 4vw, 44px); line-height: 1.3">باقات الحجز</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px">
+<div style="background: #20252E; border-radius: 22px; padding: 30px; display: flex; flex-direction: column; gap: 10px">
+<h3 style="margin: 0; font-size: 22px; font-weight: 700">أيام الأسبوع</h3>
+<p style="margin: 0; color: #CFC6B5">[الأيام]</p>
+<p style="margin: 0; font-family: 'El Messiri', serif; font-weight: 700; font-size: 34px; color: #E8A04A">[السعر] ر.ع</p>
+<p style="margin: 0; color: #CFC6B5">[وقت الدخول] – [وقت الخروج]</p>
+</div>
+<div style="background: #20252E; border: 1.5px solid #E8A04A; border-radius: 22px; padding: 30px; display: flex; flex-direction: column; gap: 10px">
+<h3 style="margin: 0; font-size: 22px; font-weight: 700">نهاية الأسبوع</h3>
+<p style="margin: 0; color: #CFC6B5">[الأيام]</p>
+<p style="margin: 0; font-family: 'El Messiri', serif; font-weight: 700; font-size: 34px; color: #E8A04A">[السعر] ر.ع</p>
+<p style="margin: 0; color: #CFC6B5">[وقت الدخول] – [وقت الخروج]</p>
+</div>
+<div style="background: #20252E; border-radius: 22px; padding: 30px; display: flex; flex-direction: column; gap: 10px">
+<h3 style="margin: 0; font-size: 22px; font-weight: 700">المناسبات الخاصة</h3>
+<p style="margin: 0; color: #CFC6B5">حجز كامل للمخيم</p>
+<p style="margin: 0; font-family: 'El Messiri', serif; font-weight: 700; font-size: 34px; color: #E8A04A">حسب الطلب</p>
+<p style="margin: 0; color: #CFC6B5">تواصل معنا للتفاصيل</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="contact" style="padding: 80px 24px">
+<div style="max-width: 1160px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 40px">
+<img loading="lazy" src="img/logofire.webp" alt="شعار مخيم البهاء فوق شبّة النار" style="flex: 0 1 300px; width: 300px; max-width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 24px; display: block">
+<div style="flex: 1 1 340px; display: flex; flex-direction: column; gap: 16px">
+<h2 style="margin: 0; font-family: 'El Messiri', serif; font-weight: 700; font-size: clamp(30px, 4vw, 44px); line-height: 1.3">احجز ليلتك في البهاء</h2>
+<p style="margin: 0; color: #CFC6B5; max-width: 480px">الأماكن محدودة في موسم الشتاء. راسلنا على واتساب لاختيار الجلسة والتاريخ وتأكيد الحجز.</p>
+<div style="display: flex; flex-direction: column; gap: 10px; margin-top: 4px">
+<div style="display: flex; align-items: center; gap: 10px"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8A04A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4 H9 L11 9 L8.5 10.5 C9.5 12.5 11.5 14.5 13.5 15.5 L15 13 L20 15 V19 C20 20 19 21 18 21 C10 20.5 3.5 14 3 6 C3 5 4 4 5 4 Z"></path></svg><span style="direction: ltr; font-weight: 700; font-size: 20px">9766 3361</span></div>
+<div style="display: flex; align-items: center; gap: 10px"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8A04A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22 C17 16 19 13 19 9.5 A7 7 0 0 0 5 9.5 C5 13 7 16 12 22 Z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg><span style="color: #CFC6B5">[الولاية / المنطقة]</span></div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 14px; margin-top: 8px">
+<a href="https://wa.me/96897663361" style="background: #E8A04A; color: #111419; text-decoration: none; font-weight: 700; font-size: 18px; padding: 14px 32px; border-radius: 999px">احجز عبر واتساب</a>
+<a href="https://www.instagram.com/camp.albahaa" style="border: 1.5px solid #4A5466; color: #F3EBDD; text-decoration: none; font-weight: 500; font-size: 18px; padding: 13px 28px; border-radius: 999px; direction: ltr">@camp.albahaa</a>
+<a href="#contact" style="border: 1.5px solid #4A5466; color: #F3EBDD; text-decoration: none; font-weight: 500; font-size: 18px; padding: 13px 28px; border-radius: 999px">[رابط الموقع على الخريطة]</a>
+</div>
+</div>
+</div>
+</section>
+
+<footer style="border-top: 1px solid #232A35; padding: 28px 24px; text-align: center; color: #B9B0A0; font-size: 15px">مخيم البهاء · AL BAHAA CAMP · ٢٠٢٦</footer>
+
+</div>
+<a class="wa-float" href="https://wa.me/96897663361">احجز واتساب</a>
+<script>
+(function(){
+var SHEET='1ywBx7sW4FMqo60nnzHSE1Q9p65B_IkoyKiCDKx5j1_I', WA='96897663361';
+var MONTHS=['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
+var DAYS=['الأحد','الاثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];
+var booked={}, today=new Date(); today.setHours(0,0,0,0);
+var view=new Date(today.getFullYear(),today.getMonth(),1), sel=null;
+function key(d){return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2)}
+function isBooked(v){v=String(v==null?'':v).trim();return v!==''&&!/^(متاح|فاضي|لا|no|false|0)$/i.test(v)}
+function toAr(n){return String(n).replace(/\d/g,function(d){return '٠١٢٣٤٥٦٧٨٩'[d]})}
+function parseDate(c){
+ if(!c)return null; var v=c.v;
+ if(typeof v==='string'){var m=v.match(/^Date\((\d+),(\d+),(\d+)/); if(m)return new Date(+m[1],+m[2],+m[3]);
+  m=v.trim().match(/^(\d{4})[-\/.](\d{1,2})[-\/.](\d{1,2})$/); if(m)return new Date(+m[1],m[2]-1,+m[3]);
+  m=v.trim().match(/^(\d{1,2})[-\/.](\d{1,2})[-\/.](\d{4})$/); if(m)return new Date(+m[3],m[2]-1,+m[1]);}
+ if(typeof v==='number'){var d=new Date(Date.UTC(1899,11,30)+v*864e5);return new Date(d.getUTCFullYear(),d.getUTCMonth(),d.getUTCDate())}
+ return null}
+function render(){
+ var t=document.getElementById('calTitle'),g=document.getElementById('calGrid');
+ t.textContent=MONTHS[view.getMonth()]+' '+toAr(view.getFullYear());
+ document.getElementById('calPrev').disabled=(view.getFullYear()===today.getFullYear()&&view.getMonth()===today.getMonth());
+ g.innerHTML='';
+ var first=view.getDay(), n=new Date(view.getFullYear(),view.getMonth()+1,0).getDate();
+ for(var i=0;i<first;i++){var e=document.createElement('div');e.className='cal-day empty';g.appendChild(e)}
+ for(var d=1;d<=n;d++){
+  var dt=new Date(view.getFullYear(),view.getMonth(),d), k=key(dt), b=booked[k]||{}, past=dt<today;
+  var btn=document.createElement('button'); btn.type='button';
+  btn.className='cal-day'+(past?' past':'')+(sel===k?' sel':'');
+  btn.disabled=past;
+  btn.setAttribute('aria-label',DAYS[dt.getDay()]+' '+d+' '+MONTHS[dt.getMonth()]+': الصباح '+(b.am?'محجوز':'متاح')+'، المساء '+(b.pm?'محجوز':'متاح'));
+  btn.innerHTML='<span>'+toAr(d)+'</span>'+(past?'':'<span class="bars"><i class="'+(b.am?'booked':'free')+'"></i><i class="'+(b.pm?'booked':'free')+'"></i></span>');
+  btn.onclick=(function(dt,k){return function(){sel=k;render();panel(dt)}})(dt,k);
+  g.appendChild(btn)}
+}
+function slot(name,isB,dt){
+ var label=DAYS[dt.getDay()]+' '+dt.getDate()+' '+MONTHS[dt.getMonth()]+' '+dt.getFullYear();
+ var msg='السلام عليكم، أرغب بحجز الفترة ال'+name+'ية في مخيم البهاء يوم '+label+'. هل متاحة؟';
+ return '<div class="slot"><b>الفترة ال'+name+'ية</b>'+(isB?'<span class="tag">محجوزة</span>':'<a href="https://wa.me/'+WA+'?text='+encodeURIComponent(msg)+'" target="_blank" rel="noopener">احجز</a>')+'</div>'}
+function panel(dt){
+ var b=booked[key(dt)]||{};
+ document.getElementById('panelDate').textContent=DAYS[dt.getDay()]+' '+toAr(dt.getDate())+' '+MONTHS[dt.getMonth()];
+ document.getElementById('panelHint').textContent=(b.am&&b.pm)?'هذا اليوم محجوز بالكامل، اختر يوماً آخر.':'اضغط "احجز" لإرسال طلبك عبر واتساب.';
+ document.getElementById('panelSlots').innerHTML=slot('صباح',b.am,dt)+slot('مسائ',b.pm,dt);
+ if(window.innerWidth<720)document.getElementById('calPanel').scrollIntoView({behavior:'smooth',block:'nearest'})}
+window.__albahaaSheet=function(res){
+ try{ booked={}; var rows=(res.table&&res.table.rows)||[];
+  rows.forEach(function(r){var c=r.c||[];var dt=parseDate(c[0]);if(!dt)return;
+   var k=key(dt), cur=booked[k]||{};
+   if(c[1]&&isBooked(c[1].v))cur.am=true; if(c[2]&&isBooked(c[2].v))cur.pm=true; booked[k]=cur});
+  document.getElementById('calStatus').textContent='يتم تحديث الحجوزات باستمرار. للتأكيد النهائي تواصل معنا عبر واتساب.';
+ }catch(e){fail()}
+ render(); if(sel){var p=sel.split('-');panel(new Date(+p[0],p[1]-1,+p[2]))}
+};
+function fail(){document.getElementById('calStatus').textContent='تعذّر تحميل الحجوزات الآن. تواصل معنا عبر واتساب لمعرفة الأيام المتاحة.'}
+function load(){
+ var s=document.createElement('script');
+ s.src='https://docs.google.com/spreadsheets/d/'+SHEET+'/gviz/tq?tqx=out:json;responseHandler:__albahaaSheet&headers=1&t='+Date.now();
+ s.onerror=fail; document.body.appendChild(s); s.onload=function(){s.remove()};
+}
+document.getElementById('calPrev').onclick=function(){view=new Date(view.getFullYear(),view.getMonth()-1,1);render()};
+document.getElementById('calNext').onclick=function(){view=new Date(view.getFullYear(),view.getMonth()+1,1);render()};
+render(); load();
+})();
+</script>
+</body>
+</html>
