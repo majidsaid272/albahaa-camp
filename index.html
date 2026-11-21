@@ -197,6 +197,23 @@ footer{border-top:1px solid var(--line);padding:26px 22px calc(26px + env(safe-a
 .wa-float{position:fixed;left:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:40;background:#25D366;color:#06301A;font-weight:800;text-decoration:none;padding:12px 20px;border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.4);display:none;align-items:center;gap:8px}
 .wa-float svg{width:22px;height:22px}
 
+
+/* prices */
+.prices{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.price{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:28px 26px;display:flex;flex-direction:column;gap:6px}
+.price.hot{border:1.5px solid var(--gold);background:linear-gradient(180deg,rgba(232,160,74,.12),var(--card) 60%)}
+.price .badge{position:absolute;top:-13px;right:22px;background:var(--gold);color:#111419;font-weight:800;font-size:13px;padding:3px 14px;border-radius:99px}
+.price h3{font-size:22px}
+.price .days{color:var(--muted);font-size:15px}
+.price .amt{font-family:'El Messiri',serif;font-weight:700;font-size:48px;color:var(--gold);line-height:1.2;margin-top:8px}
+.price .amt small{font-family:'Tajawal',sans-serif;font-size:17px;color:var(--muted);font-weight:500;margin-right:6px}
+.price .per{color:var(--dim);font-size:14px}
+.price-notes{display:flex;flex-wrap:wrap;gap:10px 24px;margin-top:22px;color:var(--muted);font-size:15px}
+.price-notes span{display:inline-flex;align-items:center;gap:8px}
+.price-notes span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold)}
+.slot .pr{color:var(--gold2);font-weight:700;font-size:14px;margin-inline-start:auto;margin-inline-end:10px}
+@media (max-width:979px){.prices{grid-template-columns:1fr}}
+
 /* desktop hero: video framed beside text */
 @media (min-width:980px){
  .hero{align-items:center;background:radial-gradient(1200px 600px at 20% 40%,rgba(232,160,74,.12),transparent 60%),var(--bg)}
@@ -241,6 +258,7 @@ footer{border-top:1px solid var(--line);padding:26px 22px calc(26px + env(safe-a
    <a class="l" href="#spaces">الجلسات</a>
    <a class="l" href="#videos">المقاطع</a>
    <a class="l" href="#gallery">الصور</a>
+   <a class="l" href="#prices">الأسعار</a>
    <a class="l" href="#booking">الأيام المتاحة</a>
    <a class="btn btn-gold" href="#booking">احجز الآن</a>
   </nav>
@@ -256,7 +274,7 @@ footer{border-top:1px solid var(--line);padding:26px 22px calc(26px + env(safe-a
    </video>
   </div>
   <div class="hero-text">
-   <span class="chip"><i></i>الحجز مفتوح لموسم الشتاء</span>
+   <span class="chip"><i></i>عروض الافتتاح: المساء من ٣٥ ريالاً</span>
    <h1>ليالي الشتاء<br>أجمل في <span>مخيم البهاء</span></h1>
    <p class="lead">مجالس عربية بالسدو، بيت شعر تراثي، جناح أبيض هادئ، وركن مناسبات مزيّن بالورد. وحولها شبّة نار وسينما تحت النجوم.</p>
    <div class="cta">
@@ -429,6 +447,19 @@ footer{border-top:1px solid var(--line);padding:26px 22px calc(26px + env(safe-a
  </div>
 </section>
 
+<section class="sec sec-alt" id="prices">
+ <div class="wrap">
+  <div class="sec-head"><div><span class="eyebrow">الأسعار</span><h2>عروض الافتتاح</h2><p>أسعار الفترة المسائية، وهي نفسها لكل الجلسات.</p></div></div>
+  <div class="prices">
+   <div class="price hot"><span class="badge">عرض الافتتاح</span><h3>أيام الأسبوع</h3><span class="days">الأحد إلى الأربعاء</span><div class="amt">٣٥<small>ريال عُماني</small></div><span class="per">للفترة المسائية</span></div>
+   <div class="price"><h3>نهاية الأسبوع</h3><span class="days">الخميس والجمعة والسبت</span><div class="amt">٥٠<small>ريال عُماني</small></div><span class="per">للفترة المسائية</span></div>
+   <div class="price"><h3>العطل الرسمية</h3><span class="days">الإجازات والمناسبات الرسمية</span><div class="amt">٧٠<small>ريال عُماني</small></div><span class="per">للفترة المسائية</span></div>
+  </div>
+  <div class="price-notes"><span>السعر نفسه لكل الجلسات</span><span>الفترة الصباحية: تواصل معنا للسعر</span><span>العروض لفترة الافتتاح</span></div>
+  <div style="margin-top:26px"><a class="btn btn-gold" href="#booking">شوف الأيام المتاحة واحجز</a></div>
+ </div>
+</section>
+
 <section class="sec" id="booking">
  <div class="wrap">
   <div class="sec-head"><div><span class="eyebrow">التوفر والحجز</span><h2>اختر اليوم والفترة</h2><p>فترتان يومياً: صباحية ومسائية. اضغط على اليوم لترى الفترات المتاحة واحجز مباشرة عبر واتساب.</p></div></div>
@@ -448,7 +479,7 @@ footer{border-top:1px solid var(--line);padding:26px 22px calc(26px + env(safe-a
     <h3 id="panelDate">اختر يوماً من التقويم</h3>
     <p id="panelHint" style="margin:0;color:var(--muted)">ستظهر هنا الفترات المتاحة لليوم الذي تختاره.</p>
     <div id="panelSlots" class="slots"></div>
-    <div class="note">الأسعار حسب الجلسة والفترة. راسلنا على واتساب وسنرسل لك التفاصيل والموقع.</div>
+    <div class="note">المساء: ٣٥ ريالاً من الأحد إلى الأربعاء، و٥٠ ريالاً من الخميس إلى السبت، و٧٠ ريالاً في العطل الرسمية. سعر الصباح عند التواصل.</div>
    </div>
   </div>
  </div>
@@ -610,7 +641,8 @@ function render(){
 function slot(name,isB,dt){
  var label=DAYS[dt.getDay()]+' '+dt.getDate()+' '+MONTHS[dt.getMonth()]+' '+dt.getFullYear();
  var msg='السلام عليكم، أرغب بحجز الفترة ال'+name+'ية في مخيم البهاء يوم '+label+'. هل متاحة؟';
- return '<div class="slot"><b>الفترة ال'+name+'ية</b>'+(isB?'<span class="tag">محجوزة</span>':'<a href="https://wa.me/'+WA+'?text='+encodeURIComponent(msg)+'" target="_blank" rel="noopener">احجز</a>')+'</div>'}
+ var pr=name==='مسائ'?(([4,5,6].indexOf(dt.getDay())>=0)?'٥٠ ر.ع':'٣٥ ر.ع'):'';
+ return '<div class="slot"><b>الفترة ال'+name+'ية</b>'+(pr&&!isB?'<span class="pr">'+pr+'</span>':'')+(isB?'<span class="tag">محجوزة</span>':'<a href="https://wa.me/'+WA+'?text='+encodeURIComponent(msg)+'" target="_blank" rel="noopener">احجز</a>')+'</div>'}
 function panel(dt){
  var b=booked[key(dt)]||{};
  document.getElementById('panelDate').textContent=DAYS[dt.getDay()]+' '+toAr(dt.getDate())+' '+MONTHS[dt.getMonth()];
