@@ -208,6 +208,7 @@ footer{border-top:1px solid var(--line);padding:26px 22px calc(26px + env(safe-a
 .price .amt{font-family:'El Messiri',serif;font-weight:700;font-size:48px;color:var(--gold);line-height:1.2;margin-top:8px}
 .price .amt small{font-family:'Tajawal',sans-serif;font-size:17px;color:var(--muted);font-weight:500;margin-right:6px}
 .price .per{color:var(--dim);font-size:14px}
+.times{margin:12px 0 0;color:var(--gold2);font-weight:700;font-size:16px;line-height:1.9}
 .price-notes{display:flex;flex-wrap:wrap;gap:10px 24px;margin-top:22px;color:var(--muted);font-size:15px}
 .price-notes span{display:inline-flex;align-items:center;gap:8px}
 .price-notes span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold)}
@@ -457,9 +458,9 @@ footer{border-top:1px solid var(--line);padding:26px 22px calc(26px + env(safe-a
  <div class="wrap">
   <div class="sec-head"><div><span class="eyebrow">الأسعار</span><h2>عروض الافتتاح</h2><p>أسعار الفترة المسائية للمخيم كاملاً بجميع جلساته.</p></div></div>
   <div class="prices">
-   <div class="price hot"><span class="badge">عرض الافتتاح</span><h3>أيام الأسبوع</h3><span class="days">الأحد إلى الأربعاء</span><div class="amt">٣٥<small>ريال عُماني</small></div><span class="per">للفترة المسائية</span></div>
-   <div class="price"><h3>نهاية الأسبوع</h3><span class="days">الخميس والجمعة والسبت</span><div class="amt">٥٠<small>ريال عُماني</small></div><span class="per">للفترة المسائية</span></div>
-   <div class="price"><h3>العطل الرسمية</h3><span class="days">الإجازات والمناسبات الرسمية</span><div class="amt">٧٠<small>ريال عُماني</small></div><span class="per">للفترة المسائية</span></div>
+   <div class="price hot"><span class="badge">عرض الافتتاح</span><h3>أيام الأسبوع</h3><span class="days">الأحد إلى الأربعاء</span><div class="amt">٣٥<small>ريال عُماني</small></div><span class="per">للفترة المسائية، من ٥ مساءً إلى ١١ ليلاً</span></div>
+   <div class="price"><h3>نهاية الأسبوع</h3><span class="days">الخميس والجمعة والسبت</span><div class="amt">٥٠<small>ريال عُماني</small></div><span class="per">للفترة المسائية، من ٥ مساءً إلى ١١ ليلاً</span></div>
+   <div class="price"><h3>العطل الرسمية</h3><span class="days">الإجازات والمناسبات الرسمية</span><div class="amt">٧٠<small>ريال عُماني</small></div><span class="per">للفترة المسائية، من ٥ مساءً إلى ١١ ليلاً</span></div>
   </div>
   <div class="price-notes"><span>السعر للمخيم كاملاً بجميع جلساته</span><span>الفترة الصباحية: تواصل معنا للسعر</span><span>العروض لفترة الافتتاح</span></div>
   <div style="margin-top:26px"><a class="btn btn-gold" href="#booking">شوف الأيام المتاحة واحجز</a></div>
@@ -468,7 +469,7 @@ footer{border-top:1px solid var(--line);padding:26px 22px calc(26px + env(safe-a
 
 <section class="sec" id="booking">
  <div class="wrap">
-  <div class="sec-head"><div><span class="eyebrow">التوفر والحجز</span><h2>اختر اليوم والفترة</h2><p>فترتان يومياً: صباحية ومسائية. اضغط على اليوم لترى الفترات المتاحة واحجز مباشرة عبر واتساب.</p></div></div>
+  <div class="sec-head"><div><span class="eyebrow">التوفر والحجز</span><h2>اختر اليوم والفترة</h2><p>فترتان يومياً: صباحية ومسائية. اضغط على اليوم لترى الفترات المتاحة واحجز مباشرة عبر واتساب.</p><p class="times">الفترة الصباحية: من ٩ صباحاً إلى ٣ عصراً<br>الفترة المسائية: من ٥ مساءً إلى ١١ ليلاً</p></div></div>
   <div class="cal-wrap">
    <div class="cal">
     <div class="cal-head">
@@ -655,7 +656,8 @@ function slot(name,isB,dt){
  var label=DAYS[dt.getDay()]+' '+dt.getDate()+' '+MONTHS[dt.getMonth()]+' '+dt.getFullYear();
  var msg='السلام عليكم، أرغب بحجز الفترة ال'+name+'ية في مخيم البهاء يوم '+label+'. هل متاحة؟';
  var pr=name==='مسائ'?(([4,5,6].indexOf(dt.getDay())>=0)?'٥٠ ر.ع':'٣٥ ر.ع'):'';
- return '<div class="slot"><b>الفترة ال'+name+'ية</b>'+(pr&&!isB?'<span class="pr">'+pr+'</span>':'')+(isB?'<span class="tag">محجوزة</span>':'<a href="https://wa.me/'+WA+'?text='+encodeURIComponent(msg)+'" target="_blank" rel="noopener">احجز</a>')+'</div>'}
+ var tm=name==='صباح'?'من ٩ صباحاً إلى ٣ عصراً':'من ٥ مساءً إلى ١١ ليلاً';
+ return '<div class="slot"><b>الفترة ال'+name+'ية<small style="display:block;font-weight:400;font-size:13px;color:var(--dim)">'+tm+'</small></b>'+(pr&&!isB?'<span class="pr">'+pr+'</span>':'')+(isB?'<span class="tag">محجوزة</span>':'<a href="https://wa.me/'+WA+'?text='+encodeURIComponent(msg)+'" target="_blank" rel="noopener">احجز</a>')+'</div>'}
 function panel(dt){
  var b=booked[key(dt)]||{};
  document.getElementById('panelDate').textContent=DAYS[dt.getDay()]+' '+toAr(dt.getDate())+' '+MONTHS[dt.getMonth()];
