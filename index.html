@@ -281,7 +281,7 @@ footer{border-top:1px solid var(--line);padding:26px 22px calc(26px + env(safe-a
    </video>
   </div>
   <div class="hero-text">
-   <span class="chip"><i></i>عروض الافتتاح: المساء من ٣٥ ريالاً</span>
+   <span class="chip"><i></i>عروض الافتتاح: من ٣٥ ريالاً للفترة</span>
    <h1>ليالي الشتاء<br>أجمل في <span>مخيم البهاء</span></h1>
    <p class="lead">مجالس عربية، بيت شعر تراثي، جناح أبيض هادئ، وركن تصوير مزيّن بالورد. وحولها شبّة نار وسينما تحت النجوم. والمخيم كله لك ولضيوفك.</p>
    <div class="cta">
@@ -456,13 +456,13 @@ footer{border-top:1px solid var(--line);padding:26px 22px calc(26px + env(safe-a
 
 <section class="sec sec-alt" id="prices">
  <div class="wrap">
-  <div class="sec-head"><div><span class="eyebrow">الأسعار</span><h2>عروض الافتتاح</h2><p>أسعار الفترة المسائية للمخيم كاملاً بجميع جلساته.</p></div></div>
+  <div class="sec-head"><div><span class="eyebrow">الأسعار</span><h2>عروض الافتتاح</h2><p>سعر الفترة الواحدة، صباحية أو مسائية، للمخيم كاملاً بجميع جلساته.</p></div></div>
   <div class="prices">
-   <div class="price hot"><span class="badge">عرض الافتتاح</span><h3>أيام الأسبوع</h3><span class="days">الأحد إلى الأربعاء</span><div class="amt">٣٥<small>ريال عُماني</small></div><span class="per">للفترة المسائية، من ٥ مساءً إلى ١١ ليلاً</span></div>
-   <div class="price"><h3>نهاية الأسبوع</h3><span class="days">الخميس والجمعة والسبت</span><div class="amt">٥٠<small>ريال عُماني</small></div><span class="per">للفترة المسائية، من ٥ مساءً إلى ١١ ليلاً</span></div>
-   <div class="price"><h3>العطل الرسمية</h3><span class="days">الإجازات والمناسبات الرسمية</span><div class="amt">٧٠<small>ريال عُماني</small></div><span class="per">للفترة المسائية، من ٥ مساءً إلى ١١ ليلاً</span></div>
+   <div class="price hot"><span class="badge">عرض الافتتاح</span><h3>أيام الأسبوع</h3><span class="days">الأحد إلى الأربعاء</span><div class="amt">٣٥<small>ريال عُماني</small></div><span class="per">للفترة الصباحية أو المسائية</span></div>
+   <div class="price"><h3>نهاية الأسبوع</h3><span class="days">الخميس والجمعة والسبت</span><div class="amt">٥٠<small>ريال عُماني</small></div><span class="per">للفترة الصباحية أو المسائية</span></div>
+   <div class="price"><h3>العطل الرسمية</h3><span class="days">الإجازات والمناسبات الرسمية</span><div class="amt">٧٠<small>ريال عُماني</small></div><span class="per">للفترة الصباحية أو المسائية</span></div>
   </div>
-  <div class="price-notes"><span>السعر للمخيم كاملاً بجميع جلساته</span><span>الفترة الصباحية: تواصل معنا للسعر</span><span>العروض لفترة الافتتاح</span></div>
+  <div class="price-notes"><span>السعر للمخيم كاملاً بجميع جلساته</span><span>السعر نفسه للفترة الصباحية والمسائية</span><span>العروض لفترة الافتتاح</span></div>
   <div style="margin-top:26px"><a class="btn btn-gold" href="#booking">شوف الأيام المتاحة واحجز</a></div>
  </div>
 </section>
@@ -486,7 +486,7 @@ footer{border-top:1px solid var(--line);padding:26px 22px calc(26px + env(safe-a
     <h3 id="panelDate">اختر يوماً من التقويم</h3>
     <p id="panelHint" style="margin:0;color:var(--muted)">ستظهر هنا الفترات المتاحة لليوم الذي تختاره.</p>
     <div id="panelSlots" class="slots"></div>
-    <div class="note">المساء: ٣٥ ريالاً من الأحد إلى الأربعاء، و٥٠ ريالاً من الخميس إلى السبت، و٧٠ ريالاً في العطل الرسمية. سعر الصباح عند التواصل. الموقع: الرميس، ولاية بركاء.</div>
+    <div class="note">سعر الفترة الواحدة، صباحية أو مسائية: ٣٥ ريالاً من الأحد إلى الأربعاء، و٥٠ ريالاً من الخميس إلى السبت، و٧٠ ريالاً في العطل الرسمية. الموقع: الرميس، ولاية بركاء.</div>
    </div>
   </div>
  </div>
@@ -655,7 +655,7 @@ function render(){
 function slot(name,isB,dt){
  var label=DAYS[dt.getDay()]+' '+dt.getDate()+' '+MONTHS[dt.getMonth()]+' '+dt.getFullYear();
  var msg='السلام عليكم، أرغب بحجز الفترة ال'+name+'ية في مخيم البهاء يوم '+label+'. هل متاحة؟';
- var pr=name==='مسائ'?(([4,5,6].indexOf(dt.getDay())>=0)?'٥٠ ر.ع':'٣٥ ر.ع'):'';
+ var pr=([4,5,6].indexOf(dt.getDay())>=0)?'٥٠ ر.ع':'٣٥ ر.ع';
  var tm=name==='صباح'?'من ٩ صباحاً إلى ٣ عصراً':'من ٥ مساءً إلى ١١ ليلاً';
  return '<div class="slot"><b>الفترة ال'+name+'ية<small style="display:block;font-weight:400;font-size:13px;color:var(--dim)">'+tm+'</small></b>'+(pr&&!isB?'<span class="pr">'+pr+'</span>':'')+(isB?'<span class="tag">محجوزة</span>':'<a href="https://wa.me/'+WA+'?text='+encodeURIComponent(msg)+'" target="_blank" rel="noopener">احجز</a>')+'</div>'}
 function panel(dt){
