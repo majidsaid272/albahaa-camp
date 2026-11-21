@@ -2,338 +2,578 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>مخيم البهاء الشتوي | Al Bahaa Camp</title>
-<meta name="description" content="مخيم البهاء الشتوي: مجالس عربية، بيوت شعر، جناح أبيض، شبّة نار وسينما خارجية. للحجز واتساب 97663361">
+<meta name="description" content="مخيم البهاء الشتوي: مجالس عربية، بيت شعر، جناح أبيض، ركن مناسبات، شبّة نار وسينما خارجية. فترتان يومياً، صباحية ومسائية. للحجز واتساب 97663361">
+<meta name="theme-color" content="#0E1117">
+<meta property="og:type" content="website">
 <meta property="og:title" content="مخيم البهاء الشتوي">
-<meta property="og:description" content="مجالس عربية، بيوت شعر، شبّة نار وسينما تحت النجوم. للحجز: 97663361">
+<meta property="og:description" content="مجالس عربية، بيت شعر، شبّة نار وسينما تحت النجوم. شوف الأيام المتاحة واحجز عبر واتساب.">
+<meta property="og:image" content="https://majidsaid272.github.io/albahaa-camp/img/og.jpg">
+<meta property="og:url" content="https://majidsaid272.github.io/albahaa-camp/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@500;600;700&family=Tajawal:wght@400;500;700&display=swap">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@500;600;700&family=Tajawal:wght@400;500;700;800&display=swap">
+<link rel="preload" as="image" href="video/tour-camp-poster.webp">
 <style>
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-section{scroll-margin-top:80px}
-body{margin:0;background:#111419}
-a{color:#E8A04A}a:hover{opacity:.9}
-.wa-float{position:fixed;left:16px;bottom:16px;z-index:10;background:#25D366;color:#0b2e17;font-family:'Tajawal',sans-serif;font-weight:700;text-decoration:none;padding:12px 20px;border-radius:999px;box-shadow:0 6px 20px rgba(0,0,0,.35);display:none}
-@media (max-width:720px){
- .navlink{display:none}
- .hero-grid{height:420px!important}
- .wa-float{display:inline-block}
- body{padding-bottom:72px}
+:root{
+ --bg:#0E1117;--bg2:#141922;--card:#1A202B;--card2:#222937;--line:#2A3242;
+ --text:#F4ECDF;--muted:#C9BFAE;--dim:#9E9586;
+ --gold:#E8A04A;--gold2:#F3C27E;--sadu:#B8322F;--green:#4CAF7A;--red:#C2453F;
+ --r:22px;--max:1180px;
 }
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Tajawal',system-ui,sans-serif;font-size:17px;line-height:1.8;overflow-x:hidden}
+img,video{display:block;max-width:100%}
+a{color:var(--gold)}
+h1,h2,h3{font-family:'El Messiri',serif;font-weight:700;margin:0;line-height:1.3}
+section{scroll-margin-top:72px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 22px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--gold);font-weight:700;font-size:15px;letter-spacing:.3px}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--gold);border-radius:2px}
+.sec{padding:88px 0}
+.sec-alt{background:var(--bg2)}
+.sec-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:36px}
+.sec-head h2{font-size:clamp(30px,4.2vw,46px);margin-top:8px}
+.sec-head p{margin:8px 0 0;color:var(--muted);max-width:560px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:12px 28px;border-radius:999px;font:inherit;font-weight:700;text-decoration:none;cursor:pointer;border:0;transition:transform .15s,background .15s}
+.btn:active{transform:scale(.97)}
+.btn-gold{background:var(--gold);color:#111419}
+.btn-gold:hover{background:var(--gold2)}
+.btn-ghost{background:rgba(255,255,255,.06);color:var(--text);border:1.5px solid rgba(255,255,255,.28);backdrop-filter:blur(6px)}
+.btn-ghost:hover{background:rgba(255,255,255,.12)}
+.btn svg{width:20px;height:20px;flex:none}
 
-.cal-wrap{display:flex;flex-wrap:wrap;gap:24px;align-items:flex-start;font-family:'Tajawal',sans-serif}
-.cal{flex:2 1 460px;background:#181C23;border-radius:22px;padding:22px}
+/* sadu band divider */
+.sadu{height:14px;background:
+ linear-gradient(45deg,transparent 35%,var(--sadu) 35% 65%,transparent 65%) 0 0/14px 14px,
+ linear-gradient(-45deg,transparent 35%,#6E1E1C 35% 65%,transparent 65%) 7px 0/14px 14px,#2A1514;opacity:.9}
+
+/* header */
+.top{position:fixed;inset:0 0 auto 0;z-index:30;transition:background .25s,box-shadow .25s;padding-top:env(safe-area-inset-top)}
+.top.solid{background:rgba(14,17,23,.94);box-shadow:0 1px 0 var(--line);backdrop-filter:blur(10px)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;height:68px}
+.brand{display:flex;align-items:center;gap:10px;color:var(--text);text-decoration:none}
+.brand svg{width:34px;height:34px}
+.brand b{font-family:'El Messiri',serif;font-size:22px;line-height:1.1;display:block}
+.brand small{display:block;font-size:11px;letter-spacing:2.5px;color:var(--muted);direction:ltr;text-align:right}
+.nav{display:flex;align-items:center;gap:24px}
+.nav a.l{color:var(--text);text-decoration:none;font-weight:500;padding:10px 0;opacity:.9}
+.nav a.l:hover{opacity:1;color:var(--gold2)}
+.nav .btn{min-height:42px;padding:8px 20px}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;isolation:isolate}
+.hero-media{position:absolute;inset:0;z-index:-2}
+.hero-media video{width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(14,17,23,.55) 0%,rgba(14,17,23,.05) 30%,rgba(14,17,23,.35) 55%,rgba(14,17,23,.96) 100%)}
+.hero-inner{width:100%;padding:120px 22px 56px}
+.hero h1{font-size:clamp(34px,7vw,76px);line-height:1.15;text-shadow:0 2px 24px rgba(0,0,0,.5)}
+.hero h1 span{color:var(--gold)}
+.hero p.lead{font-size:clamp(17px,2vw,20px);color:#EDE4D4;max-width:540px;margin:16px 0 26px;text-shadow:0 1px 12px rgba(0,0,0,.6)}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px}
+.chip{display:inline-flex;align-items:center;gap:8px;background:rgba(14,17,23,.55);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(6px);border-radius:999px;padding:5px 16px;font-size:14px;font-weight:700;color:var(--gold2);margin-bottom:16px}
+.chip i{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(76,175,122,.25)}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-top:40px}
+.facts div{background:rgba(20,25,34,.82);backdrop-filter:blur(8px);padding:16px 18px;display:flex;flex-direction:column}
+.facts b{font-family:'El Messiri',serif;font-size:24px;color:var(--gold);line-height:1.3}
+.facts span{color:var(--muted);font-size:14px}
+
+/* carousel */
+.car{position:relative}
+.car-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+.car-track::-webkit-scrollbar{display:none}
+.car-track>*{flex:0 0 100%;scroll-snap-align:start;scroll-snap-stop:always}
+.car-track img{width:100%;height:100%;object-fit:cover}
+.car-btn{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;border:0;background:rgba(14,17,23,.6);color:#fff;backdrop-filter:blur(6px);display:grid;place-items:center;cursor:pointer;opacity:0;transition:opacity .2s;z-index:2}
+.car:hover .car-btn,.car-btn:focus-visible{opacity:1}
+.car-btn svg{width:20px;height:20px}
+.car-btn.prev{right:12px}.car-btn.next{left:12px}
+.car-btn[disabled]{opacity:0!important;pointer-events:none}
+.car-dots{position:absolute;bottom:12px;left:0;right:0;display:flex;justify-content:center;gap:6px;z-index:2;pointer-events:none}
+.car-dots i{width:7px;height:7px;border-radius:99px;background:rgba(255,255,255,.5);transition:all .2s}
+.car-dots i.on{width:20px;background:#fff}
+.car-count{position:absolute;top:12px;left:12px;z-index:2;background:rgba(14,17,23,.65);backdrop-filter:blur(6px);color:#fff;font-size:13px;font-weight:700;padding:2px 12px;border-radius:99px}
+.car.single .car-btn,.car.single .car-dots,.car.single .car-count{display:none}
+.swipe-hint{display:none}
+@media (hover:none){.car-btn{display:none}}
+
+/* spaces */
+.spaces{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.space{background:var(--card);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;border:1px solid var(--line)}
+.space .car-track{aspect-ratio:4/5}
+.space .car-track img{cursor:zoom-in}
+.space-body{padding:20px 22px 24px;display:flex;flex-direction:column;gap:10px;flex:1}
+.space h3{font-size:24px}
+.space p{margin:0;color:var(--muted);font-size:16px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:6px}
+.tags span{background:var(--card2);border-radius:99px;padding:3px 12px;font-size:13.5px;color:#E3D9C7}
+.space-cta{display:flex;gap:10px;margin-top:10px}
+.space-cta a{flex:1;min-height:44px;font-size:15px;padding:8px 14px}
+
+/* reels */
+.reels{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:6px;margin:0 -22px;padding-inline:22px;scroll-padding-inline:22px}
+.reels::-webkit-scrollbar{display:none}
+.reel{flex:0 0 min(300px,72vw);scroll-snap-align:start;position:relative;border-radius:var(--r);overflow:hidden;background:#000;aspect-ratio:9/16;border:1px solid var(--line)}
+.reel video{width:100%;height:100%;object-fit:cover;cursor:pointer}
+.reel figcaption{position:absolute;inset:auto 0 0 0;padding:40px 16px 16px;background:linear-gradient(0deg,rgba(0,0,0,.8),transparent);font-weight:700;font-size:17px;pointer-events:none}
+.reel figcaption small{display:block;font-weight:400;font-size:13px;color:#DDD3C2}
+.snd{position:absolute;top:12px;left:12px;width:40px;height:40px;border-radius:50%;border:0;background:rgba(0,0,0,.55);color:#fff;display:grid;place-items:center;cursor:pointer;backdrop-filter:blur(6px)}
+.snd svg{width:20px;height:20px}
+.play-ico{position:absolute;inset:0;margin:auto;width:64px;height:64px;border-radius:50%;background:rgba(0,0,0,.5);display:grid;place-items:center;pointer-events:none;opacity:0;transition:opacity .2s}
+.reel.paused .play-ico{opacity:1}
+.play-ico svg{width:28px;height:28px;color:#fff}
+
+/* gallery */
+.gal,.thumbs{max-width:920px;margin-inline:auto}
+.gal{border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:#000}
+.gal .car-track{aspect-ratio:16/10}
+.gal .car-track>button{border:0;padding:0;background:#000;cursor:zoom-in}
+.gal .car-track img{object-fit:contain;background:#000}
+.thumbs{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;padding:14px 2px 2px}
+.thumbs::-webkit-scrollbar{display:none}
+.thumbs button{flex:0 0 76px;height:76px;border-radius:12px;overflow:hidden;border:2px solid transparent;padding:0;background:none;cursor:pointer;opacity:.6;transition:all .2s}
+.thumbs button.on{border-color:var(--gold);opacity:1}
+.thumbs img{width:100%;height:100%;object-fit:cover}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:60;background:rgba(5,7,10,.97);display:none;flex-direction:column}
+.lb.open{display:flex}
+.lb .car{flex:1;display:flex}
+.lb .car-track{flex:1;height:100%}
+.lb .car-track>div{display:flex;align-items:center;justify-content:center;padding:56px 0 40px}
+.lb .car-track img{width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain}
+.lb .car-btn{opacity:1}
+.lb-close{position:absolute;top:calc(12px + env(safe-area-inset-top));right:12px;z-index:3;width:46px;height:46px;border-radius:50%;border:0;background:rgba(255,255,255,.12);color:#fff;display:grid;place-items:center;cursor:pointer}
+.lb-close svg{width:22px;height:22px}
+.lb .car-count{top:calc(20px + env(safe-area-inset-top));left:50%;transform:translateX(-50%)}
+
+/* amenities */
+.amen{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.am{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:6px}
+.am svg{width:30px;height:30px;color:var(--gold)}
+.am h3{font-family:'Tajawal',sans-serif;font-size:18px;font-weight:800}
+.am p{margin:0;color:var(--muted);font-size:15px;line-height:1.7}
+
+/* calendar */
+.cal-wrap{display:flex;flex-wrap:wrap;gap:24px;align-items:flex-start}
+.cal{flex:2 1 480px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px}
 .cal-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
-.cal-head h3{margin:0;font-family:'El Messiri',serif;font-size:24px;color:#F3EBDD}
-.cal-nav{width:44px;height:44px;border-radius:50%;border:1.5px solid #4A5466;background:transparent;color:#F3EBDD;font-size:26px;line-height:1;cursor:pointer}
+.cal-head h3{font-size:24px}
+.cal-nav{width:44px;height:44px;border-radius:50%;border:1.5px solid #4A5466;background:transparent;color:var(--text);font-size:26px;line-height:1;cursor:pointer}
 .cal-nav:disabled{opacity:.3;cursor:default}
 .cal-week,.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
-.cal-week span{text-align:center;color:#B9B0A0;font-size:13px;padding:4px 0}
-.cal-day{position:relative;min-height:64px;border-radius:12px;border:1.5px solid transparent;background:#20252E;color:#F3EBDD;font:inherit;font-weight:700;font-size:16px;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:8px 4px 6px}
+.cal-week span{text-align:center;color:var(--dim);font-size:13px;padding:4px 0}
+.cal-day{position:relative;min-height:64px;border-radius:12px;border:1.5px solid transparent;background:var(--card2);color:var(--text);font:inherit;font-weight:700;font-size:16px;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:8px 4px 6px}
 .cal-day:hover{border-color:#4A5466}
-.cal-day.sel{border-color:#E8A04A}
+.cal-day.sel{border-color:var(--gold)}
 .cal-day.past{opacity:.35;cursor:default}
 .cal-day.empty{background:transparent;cursor:default}
 .bars{display:flex;flex-direction:column;gap:3px;width:70%}
 .bars i{display:block;height:5px;border-radius:3px}
-.free{background:#4CAF7A}.booked{background:#C2453F}
-.cal-legend{display:flex;flex-wrap:wrap;gap:16px;margin-top:14px;color:#CFC6B5;font-size:14px;align-items:center}
+.free{background:var(--green)}.booked{background:var(--red)}
+.cal-legend{display:flex;flex-wrap:wrap;gap:16px;margin-top:14px;color:var(--muted);font-size:14px;align-items:center}
 .dot{display:inline-block;width:12px;height:12px;border-radius:3px;margin-left:6px;vertical-align:-1px}
-.cal-legend-note{color:#B9B0A0}
-.cal-status{margin:10px 0 0;color:#B9B0A0;font-size:14px}
-.cal-panel{flex:1 1 280px;background:#20252E;border-radius:22px;padding:26px;display:flex;flex-direction:column;gap:12px;color:#F3EBDD}
-.cal-panel h3{margin:0;font-family:'El Messiri',serif;font-size:22px}
+.cal-status{margin:10px 0 0;color:var(--dim);font-size:14px}
+.cal-panel{flex:1 1 300px;background:var(--card2);border:1px solid var(--line);border-radius:var(--r);padding:26px;display:flex;flex-direction:column;gap:12px}
+.cal-panel h3{font-size:22px}
 .slots{display:flex;flex-direction:column;gap:10px}
-.slot{display:flex;align-items:center;justify-content:space-between;gap:10px;background:#181C23;border-radius:14px;padding:12px 14px}
+.slot{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--bg2);border-radius:14px;padding:12px 14px}
 .slot b{font-size:17px}
-.slot a{background:#E8A04A;color:#111419;text-decoration:none;font-weight:700;padding:9px 18px;border-radius:999px}
+.slot a{background:var(--gold);color:#111419;text-decoration:none;font-weight:700;padding:9px 18px;border-radius:999px}
 .slot .tag{color:#E6908B;font-weight:700}
-@media (max-width:720px){.cal{padding:14px}.cal-day{min-height:54px;font-size:14px}.cal-week,.cal-grid{gap:4px}}
+.note{margin-top:6px;background:var(--bg2);border-radius:14px;padding:14px 16px;color:var(--muted);font-size:15px}
+
+/* contact */
+.contact{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:40px;align-items:center}
+.contact img{border-radius:var(--r);aspect-ratio:4/5;object-fit:cover;width:100%;border:1px solid var(--line)}
+.contact h2{font-size:clamp(30px,4.2vw,46px)}
+.contact p{color:var(--muted)}
+.cline{display:flex;align-items:center;gap:12px;margin:10px 0}
+.cline svg{width:22px;height:22px;color:var(--gold);flex:none}
+.cline b{font-size:20px;direction:ltr}
+footer{border-top:1px solid var(--line);padding:26px 22px calc(26px + env(safe-area-inset-bottom));text-align:center;color:var(--dim);font-size:14px}
+.wa-float{position:fixed;left:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:40;background:#25D366;color:#06301A;font-weight:800;text-decoration:none;padding:12px 20px;border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.4);display:none;align-items:center;gap:8px}
+.wa-float svg{width:22px;height:22px}
+
+/* desktop hero: video framed beside text */
+@media (min-width:980px){
+ .hero{align-items:center;background:radial-gradient(1200px 600px at 20% 40%,rgba(232,160,74,.12),transparent 60%),var(--bg)}
+ .hero::after{display:none}
+ .hero-inner{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;padding:110px 22px 60px}
+ .hero-media{position:relative;inset:auto;z-index:0;order:2;justify-self:center;width:min(100%,400px);aspect-ratio:9/16;max-height:78vh;border-radius:28px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.55)}
+ .hero h1,.hero p.lead{text-shadow:none}
+ .facts div{background:var(--bg2)}
+}
+@media (max-width:979px){
+ .spaces{grid-template-columns:repeat(2,1fr)}
+ .amen{grid-template-columns:repeat(2,1fr)}
+ .nav a.l{display:none}
+}
+@media (max-width:640px){
+ body{font-size:16px}
+ .sec{padding:64px 0}
+ .spaces{grid-template-columns:1fr;gap:22px}
+ .facts{grid-template-columns:repeat(2,1fr)}
+ .facts b{font-size:20px}
+ .contact{grid-template-columns:1fr}
+ .contact img{aspect-ratio:4/5;object-position:50% 45%}
+ .cal{padding:14px}.cal-day{min-height:54px;font-size:14px}.cal-week,.cal-grid{gap:4px}
+ .wa-float{display:inline-flex}
+ footer{padding-bottom:calc(90px + env(safe-area-inset-bottom))}
+ .gal .car-track{aspect-ratio:4/5}
+ .swipe-hint{display:flex;align-items:center;justify-content:center;gap:8px;color:var(--dim);font-size:14px;margin-top:10px}
+ .swipe-hint svg{width:18px;height:18px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
-<div dir="rtl" lang="ar" style="background: #111419; color: #F3EBDD; font-family: 'Tajawal', sans-serif; font-size: 17px; line-height: 1.8">
 
-<header style="position: sticky; top: 0; z-index: 5; background: rgba(17,20,25,0.92); border-bottom: 1px solid #232A35">
-<div style="max-width: 1160px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px">
-<a href="#top" style="display: flex; align-items: center; gap: 12px; color: #F3EBDD; text-decoration: none">
-<svg aria-hidden="true" width="34" height="34" viewBox="0 0 36 36" fill="none" stroke="#E8A04A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 L4 30 H32 Z"></path><path d="M13 30 L18 20 L23 30"></path><path d="M27 8 C27 12 28 14 30 15"></path></svg>
-<span style="display: flex; flex-direction: column; line-height: 1.2"><span style="font-family: 'El Messiri', serif; font-weight: 700; font-size: 23px">مخيم البهاء</span><span style="font-size: 12px; letter-spacing: 2px; color: #B9B0A0; direction: ltr; text-align: right">AL BAHAA CAMP</span></span>
-</a>
-<nav class="topnav" aria-label="روابط الصفحة" style="display: flex; flex-wrap: wrap; align-items: center; gap: 22px">
-<a class="navlink" href="#spaces" style="color: #F3EBDD; text-decoration: none; padding: 10px 0">الجلسات</a>
-<a class="navlink" href="#videos" style="color: #F3EBDD; text-decoration: none; padding: 10px 0">المقاطع</a>
-<a class="navlink" href="#amenities" style="color: #F3EBDD; text-decoration: none; padding: 10px 0">المرافق</a>
-<a class="navlink" href="#booking" style="color: #F3EBDD; text-decoration: none; padding: 10px 0">التوفر</a>
-<a class="navlink" href="#gallery" style="color: #F3EBDD; text-decoration: none; padding: 10px 0">الصور</a>
-<a href="https://wa.me/96897663361" style="background: #E8A04A; color: #111419; text-decoration: none; font-weight: 700; padding: 10px 22px; border-radius: 999px">احجز الآن</a>
-</nav>
-</div>
+<header class="top" id="top">
+ <div class="wrap">
+  <a class="brand" href="#home" aria-label="مخيم البهاء، الصفحة الرئيسية">
+   <svg viewBox="0 0 36 36" fill="none" stroke="#E8A04A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 L4 30 H32 Z"/><path d="M13 30 L18 20 L23 30"/><path d="M27 8 C27 12 28 14 30 15"/></svg>
+   <span><b>مخيم البهاء</b><small>AL BAHAA CAMP</small></span>
+  </a>
+  <nav class="nav" aria-label="أقسام الصفحة">
+   <a class="l" href="#spaces">الجلسات</a>
+   <a class="l" href="#videos">المقاطع</a>
+   <a class="l" href="#gallery">الصور</a>
+   <a class="l" href="#booking">الأيام المتاحة</a>
+   <a class="btn btn-gold" href="#booking">احجز الآن</a>
+  </nav>
+ </div>
 </header>
 
-<section id="top" style="max-width: 1160px; margin: 0 auto; padding: 56px 24px 64px; display: flex; flex-wrap: wrap; align-items: center; gap: 48px">
-<div style="flex: 1 1 380px; display: flex; flex-direction: column; gap: 20px">
-<span style="align-self: flex-start; border: 1px solid #3A4352; color: #E8A04A; font-weight: 700; font-size: 15px; padding: 4px 16px; border-radius: 999px">موسم الشتاء ٢٠٢٦ – ٢٠٢٧</span>
-<h1 style="margin: 0; font-family: 'El Messiri', serif; font-weight: 700; font-size: clamp(40px, 6vw, 68px); line-height: 1.2">ليالي الشتاء<br>أجمل في <span style="color: #E8A04A">مخيم البهاء</span></h1>
-<p style="margin: 0; color: #CFC6B5; font-size: 19px; max-width: 500px">مجالس عربية بالسدو الأحمر، بيوت شعر تراثية، جناح أبيض عصري، شبّة نار وسينما تحت النجوم. كل ما تحتاجه لسهرة عائلية أو مناسبة لا تُنسى، في مكان واحد.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 14px; margin-top: 6px">
-<a href="https://wa.me/96897663361" style="background: #E8A04A; color: #111419; text-decoration: none; font-weight: 700; font-size: 18px; padding: 14px 32px; border-radius: 999px">احجز عبر واتساب</a>
-<a href="#booking" style="border: 1.5px solid #4A5466; color: #F3EBDD; text-decoration: none; font-weight: 500; font-size: 18px; padding: 13px 28px; border-radius: 999px">شوف الأيام المتاحة</a>
-</div>
-<div style="display: flex; flex-wrap: wrap; gap: 28px; margin-top: 14px; padding-top: 22px; border-top: 1px solid #232A35">
-<div style="display: flex; flex-direction: column"><span style="font-family: 'El Messiri', serif; font-weight: 700; font-size: 30px; color: #E8A04A">٦</span><span style="color: #B9B0A0; font-size: 15px">جلسات وخيام مختلفة</span></div>
-<div style="display: flex; flex-direction: column"><span style="font-family: 'El Messiri', serif; font-weight: 700; font-size: 30px; color: #E8A04A">سينما</span><span style="color: #B9B0A0; font-size: 15px">شاشة عرض خارجية</span></div>
-<div style="display: flex; flex-direction: column"><span style="font-family: 'El Messiri', serif; font-weight: 700; font-size: 30px; color: #E8A04A">شبّة</span><span style="color: #B9B0A0; font-size: 15px">نار وجلسات حولها</span></div>
-</div>
-</div>
-<div class="hero-grid" style="flex: 1 1 420px; display: grid; grid-template-columns: 1.25fr 1fr; grid-template-rows: 1fr 1fr; gap: 14px; height: 560px">
-<img src="img/clip-walk.webp" alt="جولة متحركة داخل المجلس الكبير" style="grid-row: 1 / 3; width: 100%; height: 100%; object-fit: cover; border-radius: 24px; display: block">
-<img src="img/majlis.webp" alt="مجلس بالسدو الأحمر تحت مظلة بيضاء" style="width: 100%; height: 100%; object-fit: cover; border-radius: 24px; display: block">
-<img src="img/logofire.webp" alt="شعار مخيم البهاء وشبّة النار" style="width: 100%; height: 100%; object-fit: cover; border-radius: 24px; display: block">
-</div>
+<main>
+<section class="hero" id="home">
+ <div class="wrap hero-inner">
+  <div class="hero-media">
+   <video id="heroVid" autoplay muted loop playsinline preload="auto" poster="video/tour-camp-poster.webp" aria-label="جولة مصورة في مخيم البهاء">
+    <source src="video/hero.mp4" type="video/mp4">
+   </video>
+  </div>
+  <div class="hero-text">
+   <span class="chip"><i></i>الحجز مفتوح لموسم الشتاء</span>
+   <h1>ليالي الشتاء<br>أجمل في <span>مخيم البهاء</span></h1>
+   <p class="lead">مجالس عربية بالسدو، بيت شعر تراثي، جناح أبيض هادئ، وركن مناسبات مزيّن بالورد. وحولها شبّة نار وسينما تحت النجوم.</p>
+   <div class="cta">
+    <a class="btn btn-gold" href="#booking">
+     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+     شوف الأيام المتاحة</a>
+    <a class="btn btn-ghost" href="#spaces">تصفّح الجلسات</a>
+   </div>
+   <div class="facts">
+    <div><b>٦</b><span>جلسات وأركان</span></div>
+    <div><b>فترتان</b><span>صباحية ومسائية</span></div>
+    <div><b>شبّة نار</b><span>بين الجلسات</span></div>
+    <div><b>سينما</b><span>شاشة عرض خارجية</span></div>
+   </div>
+  </div>
+ </div>
+</section>
+<div class="sadu" aria-hidden="true"></div>
+
+<section class="sec" id="spaces">
+ <div class="wrap">
+  <div class="sec-head">
+   <div>
+    <span class="eyebrow">الجلسات والأركان</span>
+    <h2>اختر جلستك</h2>
+    <p>لكل جلسة طابعها. اسحب الصور داخل كل بطاقة لترى زوايا أكثر، واضغط على الصورة لتكبيرها.</p>
+   </div>
+  </div>
+  <div class="spaces">
+
+   <article class="space">
+    <div class="car" data-car>
+     <div class="car-track">
+      <div><img src="img/majlis-wide.webp" alt="المجلس الكبير تحت المظلة بالستائر البيضاء" loading="lazy"></div>
+      <div><img src="img/majlis-front.webp" alt="واجهة المجلس الكبير بالسدو الأحمر والثريات المعلقة" loading="lazy"></div>
+      <div><img src="img/majlis-side.webp" alt="المجلس الكبير من الجانب مع شاشة العرض" loading="lazy"></div>
+      <div><img src="img/majlis-night.webp" alt="المجلس الكبير في الليل" loading="lazy"></div>
+     </div>
+    </div>
+    <div class="space-body">
+     <h3>المجلس الكبير</h3>
+     <p>مظلة واسعة بستائر بيضاء وسدو أحمر، وكنب مريح على شكل حرف U حول طاولة وسط، وثريات معلّقة بالحبال. بجانبه شاشة العرض للسهرات.</p>
+     <div class="tags"><span>كنب</span><span>ثريات</span><span>قرب شاشة العرض</span><span>عشب</span></div>
+    </div>
+   </article>
+
+   <article class="space">
+    <div class="car" data-car>
+     <div class="car-track">
+      <div><img src="img/redtent.webp" alt="بيت الشعر الأحمر المفروش بالسجاد والمساند" loading="lazy"></div>
+      <div><img src="video/redtent-fire-poster.webp" alt="بيت الشعر وأمامه شبّة النار" loading="lazy"></div>
+     </div>
+    </div>
+    <div class="space-body">
+     <h3>بيت الشعر</h3>
+     <p>خيمة تراثية بنقوش السدو الحمراء، مفروشة بالسجاد والمساند الأرضية، وتطل مباشرة على شبّة النار. روح البر كما هي.</p>
+     <div class="tags"><span>تراثي</span><span>جلسة أرضية</span><span>أمام النار</span></div>
+    </div>
+   </article>
+
+   <article class="space">
+    <div class="car" data-car>
+     <div class="car-track">
+      <div><img src="img/white-suite.webp" alt="الجناح الأبيض بكنب كريمي وستائر شفافة" loading="lazy"></div>
+     </div>
+    </div>
+    <div class="space-body">
+     <h3>الجناح الأبيض</h3>
+     <p>جناح مغلق بجدران بيضاء وإضاءة ناعمة، فيه كنب كريمي فاخر وطاولة وسط وستائر شفافة على العشب. هادئ وأنيق.</p>
+     <div class="tags"><span>عصري</span><span>كنب فاخر</span><span>إضاءة سقف</span></div>
+    </div>
+   </article>
+
+   <article class="space">
+    <div class="car" data-car>
+     <div class="car-track">
+      <div><img src="img/majlis2.webp" alt="مجلس الحديقة بالمساند الملوّنة والإضاءة المعلّقة" loading="lazy"></div>
+     </div>
+    </div>
+    <div class="space-body">
+     <h3>مجلس الحديقة</h3>
+     <p>جلسة مفتوحة تحت ستائر بيضاء وإنارة معلّقة، بمساند ملوّنة وسجاد أحمر، يوصل لها ممر خشبي بين الحصى المضاء.</p>
+     <div class="tags"><span>مفتوح</span><span>إنارة معلّقة</span><span>ممر خشبي</span></div>
+    </div>
+   </article>
+
+   <article class="space">
+    <div class="car" data-car>
+     <div class="car-track">
+      <div><img src="img/quiet-corner.webp" alt="الركن الهادئ بكرسيين تحت قوس الورد الأبيض" loading="lazy"></div>
+      <div><img src="img/quiet-corner2.webp" alt="الركن الهادئ بالفانوس والشموع" loading="lazy"></div>
+     </div>
+    </div>
+    <div class="space-body">
+     <h3>الركن الهادئ</h3>
+     <p>كرسيان تحت قوس من الورد الأبيض، وفانوس معلّق وشموع، تحيط بها النباتات والإضاءة الأرضية. مثالي لجلسة قهوة أو جلسة اثنين.</p>
+     <div class="tags"><span>رومانسي</span><span>شخصين</span><span>تصوير</span></div>
+    </div>
+   </article>
+
+   <article class="space">
+    <div class="car" data-car>
+     <div class="car-track">
+      <div><img src="img/pink.webp" alt="ركن المناسبات بالمرآة وإطار الورد والستائر الوردية" loading="lazy"></div>
+      <div><img src="video/pink-tour-poster.webp" alt="ركن المناسبات من زاوية أخرى" loading="lazy"></div>
+     </div>
+    </div>
+    <div class="space-body">
+     <h3>ركن المناسبات</h3>
+     <p>مرآة كبيرة بإطار من الورد، وستائر وردية وشموع ومصباح أرضي. مجهّز لأعياد الميلاد والمفاجآت والصور التذكارية.</p>
+     <div class="tags"><span>أعياد ميلاد</span><span>مفاجآت</span><span>ركن تصوير</span></div>
+    </div>
+   </article>
+
+  </div>
+ </div>
 </section>
 
-<section id="spaces" style="background: #181C23; padding: 80px 24px">
-<div style="max-width: 1160px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px">
-<div style="display: flex; flex-direction: column; gap: 8px; max-width: 640px">
-<span style="color: #E8A04A; font-weight: 700">الجلسات والخيام</span>
-<h2 style="margin: 0; font-family: 'El Messiri', serif; font-weight: 700; font-size: clamp(30px, 4vw, 44px); line-height: 1.3">اختر جلستك المفضلة</h2>
-<p style="margin: 0; color: #CFC6B5">لكل جلسة طابعها الخاص، من التراثي الأصيل إلى العصري الهادئ.</p>
-</div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px">
-
-<article style="background: #20252E; border-radius: 22px; overflow: hidden; display: flex; flex-direction: column">
-<img loading="lazy" src="img/majlis2.webp" alt="المجلس الكبير بالسدو الأحمر والإضاءة الدافئة" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block">
-<div style="padding: 22px 24px 26px; display: flex; flex-direction: column; gap: 10px">
-<h3 style="margin: 0; font-family: 'El Messiri', serif; font-size: 24px; font-weight: 700">المجلس الكبير</h3>
-<p style="margin: 0; color: #CFC6B5">جلسة عربية واسعة بفرش السدو الأحمر والمساند، تحت مظلة بستائر بيضاء وإضاءة دافئة. مثالية للتجمعات الكبيرة.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 8px"><span style="background: #2C3340; border-radius: 999px; padding: 2px 12px; font-size: 14px">جلسة أرضية</span><span style="background: #2C3340; border-radius: 999px; padding: 2px 12px; font-size: 14px">مظلة</span><span style="background: #2C3340; border-radius: 999px; padding: 2px 12px; font-size: 14px">إضاءة</span></div>
-</div>
-</article>
-
-<article style="background: #20252E; border-radius: 22px; overflow: hidden; display: flex; flex-direction: column">
-<img loading="lazy" src="img/majlis.webp" alt="مجلس بكنب وطاولة وستائر بيضاء" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block">
-<div style="padding: 22px 24px 26px; display: flex; flex-direction: column; gap: 10px">
-<h3 style="margin: 0; font-family: 'El Messiri', serif; font-size: 24px; font-weight: 700">مجلس الستائر البيضاء</h3>
-<p style="margin: 0; color: #CFC6B5">كنب مريح وطاولة وسط، وفرش أحمر وثريات معلّقة، يجمع الطابع العربي مع لمسة عصرية.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 8px"><span style="background: #2C3340; border-radius: 999px; padding: 2px 12px; font-size: 14px">كنب</span><span style="background: #2C3340; border-radius: 999px; padding: 2px 12px; font-size: 14px">طاولة</span><span style="background: #2C3340; border-radius: 999px; padding: 2px 12px; font-size: 14px">ثريات</span></div>
-</div>
-</article>
-
-<article style="background: #20252E; border-radius: 22px; overflow: hidden; display: flex; flex-direction: column">
-<img loading="lazy" src="img/lounge.webp" alt="الجناح الأبيض بكنب عصري على العشب" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block">
-<div style="padding: 22px 24px 26px; display: flex; flex-direction: column; gap: 10px">
-<h3 style="margin: 0; font-family: 'El Messiri', serif; font-size: 24px; font-weight: 700">الجناح الأبيض</h3>
-<p style="margin: 0; color: #CFC6B5">خيمة بيضاء مضيئة بكنب عصري ونباتات وستائر شفافة، على أرضية عشب. أجواء هادئة وأنيقة.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 8px"><span style="background: #2C3340; border-radius: 999px; padding: 2px 12px; font-size: 14px">عصري</span><span style="background: #2C3340; border-radius: 999px; padding: 2px 12px; font-size: 14px">كنب</span><span style="background: #2C3340; border-radius: 999px; padding: 2px 12px; font-size: 14px">عشب</span></div>
-</div>
-</article>
-
-<article style="background: #20252E; border-radius: 22px; overflow: hidden; display: flex; flex-direction: column">
-<img loading="lazy" src="img/redtent.webp" alt="بيت شعر أحمر مفروش على العشب" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block">
-<div style="padding: 22px 24px 26px; display: flex; flex-direction: column; gap: 10px">
-<h3 style="margin: 0; font-family: 'El Messiri', serif; font-size: 24px; font-weight: 700">بيت الشعر الأحمر</h3>
-<p style="margin: 0; color: #CFC6B5">خيمة تراثية بنقوش السدو الحمراء ومفارش أرضية، تطل على شبّة النار. روح البر الأصيلة.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 8px"><span style="background: #2C3340; border-radius: 999px; padding: 2px 12px; font-size: 14px">تراثي</span><span style="background: #2C3340; border-radius: 999px; padding: 2px 12px; font-size: 14px">قرب النار</span></div>
-</div>
-</article>
-
-<article style="background: #20252E; border-radius: 22px; overflow: hidden; display: flex; flex-direction: column">
-<img loading="lazy" src="img/colortent.webp" alt="خيمة تراثية بنقوش ملونة وجلسة أرضية" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block">
-<div style="padding: 22px 24px 26px; display: flex; flex-direction: column; gap: 10px">
-<h3 style="margin: 0; font-family: 'El Messiri', serif; font-size: 24px; font-weight: 700">الخيمة الملوّنة</h3>
-<p style="margin: 0; color: #CFC6B5">خيمة بنقوش تراثية زاهية وجلسة أرضية بالمساند والسجاد، دافئة وحميمة لليالي الباردة.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 8px"><span style="background: #2C3340; border-radius: 999px; padding: 2px 12px; font-size: 14px">تراثي</span><span style="background: #2C3340; border-radius: 999px; padding: 2px 12px; font-size: 14px">جلسة أرضية</span></div>
-</div>
-</article>
-
-<article style="background: #20252E; border-radius: 22px; overflow: hidden; display: flex; flex-direction: column">
-<img loading="lazy" src="img/pink.webp" alt="ركن مزيّن بالورود الوردية والشموع" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block">
-<div style="padding: 22px 24px 26px; display: flex; flex-direction: column; gap: 10px">
-<h3 style="margin: 0; font-family: 'El Messiri', serif; font-size: 24px; font-weight: 700">ركن المناسبات</h3>
-<p style="margin: 0; color: #CFC6B5">ركن مزيّن بالورود والشموع والستائر الوردية، مناسب للتصوير وأعياد الميلاد والمناسبات الخاصة.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 8px"><span style="background: #2C3340; border-radius: 999px; padding: 2px 12px; font-size: 14px">تصوير</span><span style="background: #2C3340; border-radius: 999px; padding: 2px 12px; font-size: 14px">مناسبات</span></div>
-</div>
-</article>
-
-</div>
-</div>
+<section class="sec sec-alt" id="videos">
+ <div class="wrap">
+  <div class="sec-head">
+   <div>
+    <span class="eyebrow">مقاطع من المخيم</span>
+    <h2>عِش الأجواء قبل أن تصل</h2>
+    <p>المقاطع تعمل تلقائياً بدون صوت. اضغط زر الصوت لتسمع، أو على المقطع لإيقافه.</p>
+   </div>
+   <a class="btn btn-ghost" href="https://www.instagram.com/camp.albahaa">المزيد على إنستغرام</a>
+  </div>
+  <div class="reels">
+   <figure class="reel"><video muted loop playsinline preload="none" poster="video/tour-camp-poster.webp"><source src="video/tour-camp.mp4" type="video/mp4"></video><span class="play-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><button class="snd" type="button" aria-label="تشغيل الصوت"></button><figcaption>جولة في المخيم<small>الجناح، النار، المرجيحة وركن المناسبات</small></figcaption></figure>
+   <figure class="reel"><video muted loop playsinline preload="none" poster="video/tour-majlis-poster.webp"><source src="video/tour-majlis.mp4" type="video/mp4"></video><span class="play-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><button class="snd" type="button" aria-label="تشغيل الصوت"></button><figcaption>المجلس الكبير<small>من الداخل</small></figcaption></figure>
+   <figure class="reel"><video muted loop playsinline preload="none" poster="video/redtent-fire-poster.webp"><source src="video/redtent-fire.mp4" type="video/mp4"></video><span class="play-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><button class="snd" type="button" aria-label="تشغيل الصوت"></button><figcaption>بيت الشعر وشبّة النار</figcaption></figure>
+   <figure class="reel"><video muted loop playsinline preload="none" poster="video/pink-tour-poster.webp"><source src="video/pink-tour.mp4" type="video/mp4"></video><span class="play-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><button class="snd" type="button" aria-label="تشغيل الصوت"></button><figcaption>ركن المناسبات</figcaption></figure>
+  </div>
+ </div>
 </section>
 
-<section id="videos" style="padding: 80px 24px">
-<div style="max-width: 1160px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px">
-<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
-<div style="display: flex; flex-direction: column; gap: 8px; max-width: 600px">
-<span style="color: #E8A04A; font-weight: 700">مقاطع من المخيم</span>
-<h2 style="margin: 0; font-family: 'El Messiri', serif; font-weight: 700; font-size: clamp(30px, 4vw, 44px); line-height: 1.3">عِش الأجواء قبل أن تصل</h2>
-</div>
-<a href="https://www.instagram.com/camp.albahaa" style="border: 1.5px solid #4A5466; color: #F3EBDD; text-decoration: none; font-weight: 500; padding: 10px 24px; border-radius: 999px">المزيد على إنستغرام</a>
-</div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px">
-<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
-<img loading="lazy" src="img/clip-fire.webp" alt="مقطع متحرك لشبّة النار أمام شعار المخيم" style="width: 100%; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 20px; display: block">
-<figcaption style="font-weight: 700">شبّة النار</figcaption>
-</figure>
-<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
-<img loading="lazy" src="img/clip-walk.webp" alt="مقطع متحرك لجولة في المجلس الكبير" style="width: 100%; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 20px; display: block">
-<figcaption style="font-weight: 700">جولة في المجلس</figcaption>
-</figure>
-<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
-<img loading="lazy" src="img/clip-swing.webp" alt="مقطع متحرك للمرجيحة تحت قوس الورد" style="width: 100%; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 20px; display: block">
-<figcaption style="font-weight: 700">مرجيحة قوس الورد</figcaption>
-</figure>
-<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
-<img loading="lazy" src="img/clip-cinema.webp" alt="مقطع متحرك للسينما الخارجية" style="width: 100%; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 20px; display: block">
-<figcaption style="font-weight: 700">السينما الخارجية</figcaption>
-</figure>
-</div>
-</div>
+<section class="sec" id="gallery">
+ <div class="wrap">
+  <div class="sec-head">
+   <div>
+    <span class="eyebrow">معرض الصور</span>
+    <h2>لمحات من ليالي البهاء</h2>
+   </div>
+  </div>
+  <div class="gal">
+   <div class="car" data-car id="galCar">
+    <div class="car-track" id="galTrack"></div>
+   </div>
+  </div>
+  <div class="swipe-hint" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>اسحب لليمين للصورة التالية</div>
+  <div class="thumbs" id="thumbs" aria-label="الصور المصغّرة"></div>
+ </div>
+</section>
+<div class="sadu" aria-hidden="true"></div>
+
+<section class="sec sec-alt" id="amenities">
+ <div class="wrap">
+  <div class="sec-head"><div><span class="eyebrow">المرافق والتجارب</span><h2>كل تفصيل مجهّز لراحتك</h2></div></div>
+  <div class="amen">
+   <div class="am"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4c6 7 6 13 3 18h-6c-3-5-2-11 3-18z"/><path d="M7 28l18-5M7 23l18 5"/></svg><h3>شبّة نار</h3><p>موقد بالحجارة ومقاعد حوله أمام بيت الشعر.</p></div>
+   <div class="am"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="24" height="15" rx="2"/><path d="M16 20v6M10 27h12"/></svg><h3>سينما خارجية</h3><p>شاشة عرض لمشاهدة الأفلام والمباريات.</p></div>
+   <div class="am"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3v5"/><path d="M9 14c0-5 14-5 14 0v8c0 5-14 5-14 0z"/></svg><h3>مرجيحة قوس الورد</h3><p>مرجيحة معلّقة تحت قوس ورد أبيض وستائر.</p></div>
+   <div class="am"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="9" width="24" height="17" rx="3"/><circle cx="16" cy="17" r="5"/><path d="M11 9l2-4h6l2 4"/></svg><h3>أركان تصوير</h3><p>ورد وشموع ومرآة وفوانيس لصور مميزة.</p></div>
+   <div class="am"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4v4"/><path d="M10 8h12l-2 10h-8z"/><path d="M14 22h4"/></svg><h3>إضاءة ليلية</h3><p>فوانيس وإنارة معلّقة وإضاءة بين الحجارة.</p></div>
+   <div class="am"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 26c6-4 18-4 24 0"/><path d="M16 24V10"/><path d="M16 14c-4-4-8-3-10-1M16 12c4-4 8-3 10-1"/></svg><h3>عشب ونباتات</h3><p>عشب وممرات خشبية ونباتات حول الجلسات.</p></div>
+   <div class="am"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="16" cy="16" r="11"/><path d="M16 9v7l5 3"/></svg><h3>فترتان يومياً</h3><p>فترة صباحية وفترة مسائية، احجز ما يناسبك.</p></div>
+   <div class="am"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="4"/><circle cx="22" cy="12" r="3"/><path d="M3 26c0-6 4-8 8-8s8 2 8 8"/><path d="M21 19c4 0 8 2 8 7"/></svg><h3>للعائلات والأصحاب</h3><p>أجواء خاصة للتجمعات والسهرات والمناسبات.</p></div>
+  </div>
+ </div>
 </section>
 
-<section id="amenities" style="background: #181C23; padding: 80px 24px">
-<div style="max-width: 1160px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px">
-<div style="display: flex; flex-direction: column; gap: 8px">
-<span style="color: #E8A04A; font-weight: 700">المرافق والتجارب</span>
-<h2 style="margin: 0; font-family: 'El Messiri', serif; font-weight: 700; font-size: clamp(30px, 4vw, 44px); line-height: 1.3">كل تفصيل مجهّز لراحتك</h2>
-</div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px">
-<div style="background: #20252E; border-radius: 18px; padding: 24px; display: flex; flex-direction: column; gap: 8px">
-<svg aria-hidden="true" width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="#E8A04A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4 C22 11 22 17 19 22 H13 C10 17 11 11 16 4 Z"></path><path d="M7 28 L25 23 M7 23 L25 28"></path></svg>
-<h3 style="margin: 0; font-size: 20px; font-weight: 700">شبّة نار</h3>
-<p style="margin: 0; color: #CFC6B5">موقد بالحجارة ومقاعد حوله للسهر في ليالي الشتاء.</p>
-</div>
-<div style="background: #20252E; border-radius: 18px; padding: 24px; display: flex; flex-direction: column; gap: 8px">
-<svg aria-hidden="true" width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="#E8A04A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="24" height="15" rx="2"></rect><path d="M16 20 V26 M10 27 H22"></path></svg>
-<h3 style="margin: 0; font-size: 20px; font-weight: 700">سينما خارجية</h3>
-<p style="margin: 0; color: #CFC6B5">شاشة عرض كبيرة وجلسة أرضية بالمساند على العشب.</p>
-</div>
-<div style="background: #20252E; border-radius: 18px; padding: 24px; display: flex; flex-direction: column; gap: 8px">
-<svg aria-hidden="true" width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="#E8A04A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3 V8"></path><path d="M9 14 C9 9 23 9 23 14 V22 C23 27 9 27 9 22 Z"></path></svg>
-<h3 style="margin: 0; font-size: 20px; font-weight: 700">مرجيحة قوس الورد</h3>
-<p style="margin: 0; color: #CFC6B5">مرجيحة معلّقة تحت قوس من الورود، ركن مميز للصور.</p>
-</div>
-<div style="background: #20252E; border-radius: 18px; padding: 24px; display: flex; flex-direction: column; gap: 8px">
-<svg aria-hidden="true" width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="#E8A04A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="9" width="24" height="17" rx="3"></rect><circle cx="16" cy="17" r="5"></circle><path d="M11 9 L13 5 H19 L21 9"></path></svg>
-<h3 style="margin: 0; font-size: 20px; font-weight: 700">أركان تصوير</h3>
-<p style="margin: 0; color: #CFC6B5">ديكورات بالورد والشموع والفوانيس تناسب الصور والمناسبات.</p>
-</div>
-<div style="background: #20252E; border-radius: 18px; padding: 24px; display: flex; flex-direction: column; gap: 8px">
-<svg aria-hidden="true" width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="#E8A04A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4 V8"></path><path d="M10 8 H22 L20 18 H12 Z"></path><path d="M14 22 H18"></path></svg>
-<h3 style="margin: 0; font-size: 20px; font-weight: 700">إضاءة دافئة</h3>
-<p style="margin: 0; color: #CFC6B5">فوانيس معلّقة وإضاءة أرضية على الممرات والجدران.</p>
-</div>
-<div style="background: #20252E; border-radius: 18px; padding: 24px; display: flex; flex-direction: column; gap: 8px">
-<svg aria-hidden="true" width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="#E8A04A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 26 C10 22 22 22 28 26"></path><path d="M16 24 V10"></path><path d="M16 14 C12 10 8 11 6 13 M16 12 C20 8 24 9 26 11"></path></svg>
-<h3 style="margin: 0; font-size: 20px; font-weight: 700">عشب ونباتات</h3>
-<p style="margin: 0; color: #CFC6B5">أرضيات عشب ومساحات خضراء ونباتات حول الجلسات.</p>
-</div>
-</div>
-</div>
+<section class="sec" id="booking">
+ <div class="wrap">
+  <div class="sec-head"><div><span class="eyebrow">التوفر والحجز</span><h2>اختر اليوم والفترة</h2><p>فترتان يومياً: صباحية ومسائية. اضغط على اليوم لترى الفترات المتاحة واحجز مباشرة عبر واتساب.</p></div></div>
+  <div class="cal-wrap">
+   <div class="cal">
+    <div class="cal-head">
+     <button type="button" id="calPrev" class="cal-nav" aria-label="الشهر السابق">&#8250;</button>
+     <h3 id="calTitle"></h3>
+     <button type="button" id="calNext" class="cal-nav" aria-label="الشهر التالي">&#8249;</button>
+    </div>
+    <div class="cal-week"><span>أحد</span><span>اثنين</span><span>ثلاثاء</span><span>أربعاء</span><span>خميس</span><span>جمعة</span><span>سبت</span></div>
+    <div id="calGrid" class="cal-grid"></div>
+    <div class="cal-legend"><span><i class="dot free"></i>متاح</span><span><i class="dot booked"></i>محجوز</span><span>الشريط العلوي: الصباح · السفلي: المساء</span></div>
+    <p id="calStatus" class="cal-status">جاري تحميل الحجوزات…</p>
+   </div>
+   <div class="cal-panel" id="calPanel">
+    <h3 id="panelDate">اختر يوماً من التقويم</h3>
+    <p id="panelHint" style="margin:0;color:var(--muted)">ستظهر هنا الفترات المتاحة لليوم الذي تختاره.</p>
+    <div id="panelSlots" class="slots"></div>
+    <div class="note">الأسعار حسب الجلسة والفترة. راسلنا على واتساب وسنرسل لك التفاصيل والموقع.</div>
+   </div>
+  </div>
+ </div>
 </section>
 
-<section id="gallery" style="padding: 80px 24px">
-<div style="max-width: 1160px; margin: 0 auto; display: flex; flex-direction: column; gap: 36px">
-<div style="display: flex; flex-direction: column; gap: 8px">
-<span style="color: #E8A04A; font-weight: 700">معرض الصور</span>
-<h2 style="margin: 0; font-family: 'El Messiri', serif; font-weight: 700; font-size: clamp(30px, 4vw, 44px); line-height: 1.3">لمحات من ليالي البهاء</h2>
-</div>
-<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); grid-auto-rows: 210px; gap: 14px">
-<img loading="lazy" src="img/entrance.webp" alt="مدخل مخيم البهاء ولوحة الاسم" style="grid-row: span 2; width: 100%; height: 100%; object-fit: cover; border-radius: 18px; display: block">
-<img loading="lazy" src="img/corner.webp" alt="ركن جلوس بفانوس معلّق ونباتات" style="grid-row: span 2; width: 100%; height: 100%; object-fit: cover; border-radius: 18px; display: block">
-<img loading="lazy" src="img/swing.webp" alt="مرجيحة معلّقة تحت قوس الورد" style="grid-row: span 2; width: 100%; height: 100%; object-fit: cover; border-radius: 18px; display: block">
-<img loading="lazy" src="img/firepit.webp" alt="شبّة النار أمام بيت الشعر" style="grid-row: span 2; width: 100%; height: 100%; object-fit: cover; border-radius: 18px; display: block">
-<img loading="lazy" src="img/cinema.webp" alt="شاشة السينما الخارجية" style="grid-row: span 2; width: 100%; height: 100%; object-fit: cover; border-radius: 18px; display: block">
-<img loading="lazy" src="img/logo.webp" alt="لوحة الترحيب بجانب سياج القصب" style="grid-row: span 2; width: 100%; height: 100%; object-fit: cover; border-radius: 18px; display: block">
-</div>
-</div>
+<section class="sec sec-alt" id="contact">
+ <div class="wrap contact">
+  <img src="img/logo-fire.webp" alt="شعار مخيم البهاء وشبّة النار" loading="lazy">
+  <div>
+   <span class="eyebrow">تواصل معنا</span>
+   <h2 style="margin-top:8px">حيّاكم في البهاء</h2>
+   <p>الأماكن محدودة في موسم الشتاء. راسلنا لاختيار الجلسة والتاريخ وتأكيد حجزك.</p>
+   <div class="cline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5c1 2 3 4 5 5L15 13l5 2v4c0 1-1 2-2 2C10 20.5 3.5 14 3 6c0-1 1-2 2-2z"/></svg><b>9766 3361</b></div>
+   <div class="cline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg><b>@camp.albahaa</b></div>
+   <div class="cta" style="display:flex;flex-wrap:wrap;gap:12px;margin-top:18px">
+    <a class="btn btn-gold" href="https://wa.me/96897663361?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%AD%D8%AC%D8%B2%20%D9%81%D9%8A%20%D9%85%D8%AE%D9%8A%D9%85%20%D8%A7%D9%84%D8%A8%D9%87%D8%A7%D8%A1">احجز عبر واتساب</a>
+    <a class="btn btn-ghost" href="https://www.instagram.com/camp.albahaa">إنستغرام</a>
+   </div>
+  </div>
+ </div>
 </section>
+</main>
 
-<section id="booking" style="padding: 80px 24px">
-<div style="max-width: 1160px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px">
-<div style="display: flex; flex-direction: column; gap: 8px">
-<span style="color: #E8A04A; font-weight: 700">التوفر والحجز</span>
-<h2 style="margin: 0; font-family: 'El Messiri', serif; font-weight: 700; font-size: clamp(30px, 4vw, 44px); line-height: 1.3">اختر اليوم والفترة</h2>
-<p style="margin: 0; color: #CFC6B5">فترتان يومياً: صباحية ومسائية. اضغط على اليوم لرؤية الفترات المتاحة والحجز عبر واتساب.</p>
-</div>
-<div class="cal-wrap">
-<div class="cal">
-<div class="cal-head">
-<button type="button" id="calNext" class="cal-nav" aria-label="الشهر التالي">&#8250;</button>
-<h3 id="calTitle"></h3>
-<button type="button" id="calPrev" class="cal-nav" aria-label="الشهر السابق">&#8249;</button>
-</div>
-<div class="cal-week"><span>أحد</span><span>اثنين</span><span>ثلاثاء</span><span>أربعاء</span><span>خميس</span><span>جمعة</span><span>سبت</span></div>
-<div id="calGrid" class="cal-grid" role="grid"></div>
-<div class="cal-legend">
-<span><i class="dot free"></i>متاح</span><span><i class="dot booked"></i>محجوز</span>
-<span class="cal-legend-note">الشريط العلوي: الصباح · السفلي: المساء</span>
-</div>
-<p id="calStatus" class="cal-status">جاري تحميل الحجوزات…</p>
-</div>
-<div class="cal-panel" id="calPanel">
-<h3 id="panelDate">اختر يوماً من التقويم</h3>
-<p id="panelHint" style="margin:0;color:#CFC6B5">ستظهر هنا الفترات المتاحة لليوم الذي تختاره.</p>
-<div id="panelSlots" class="slots"></div>
-</div>
-</div>
-</div>
-</section>
+<footer>مخيم البهاء · AL BAHAA CAMP · ٢٠٢٦</footer>
 
-<section id="prices" style="background: #181C23; padding: 80px 24px">
-<div style="max-width: 1160px; margin: 0 auto; display: flex; flex-direction: column; gap: 36px">
-<div style="display: flex; flex-direction: column; gap: 8px">
-<span style="color: #E8A04A; font-weight: 700">الأسعار</span>
-<h2 style="margin: 0; font-family: 'El Messiri', serif; font-weight: 700; font-size: clamp(30px, 4vw, 44px); line-height: 1.3">باقات الحجز</h2>
-</div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px">
-<div style="background: #20252E; border-radius: 22px; padding: 30px; display: flex; flex-direction: column; gap: 10px">
-<h3 style="margin: 0; font-size: 22px; font-weight: 700">أيام الأسبوع</h3>
-<p style="margin: 0; color: #CFC6B5">[الأيام]</p>
-<p style="margin: 0; font-family: 'El Messiri', serif; font-weight: 700; font-size: 34px; color: #E8A04A">[السعر] ر.ع</p>
-<p style="margin: 0; color: #CFC6B5">[وقت الدخول] – [وقت الخروج]</p>
-</div>
-<div style="background: #20252E; border: 1.5px solid #E8A04A; border-radius: 22px; padding: 30px; display: flex; flex-direction: column; gap: 10px">
-<h3 style="margin: 0; font-size: 22px; font-weight: 700">نهاية الأسبوع</h3>
-<p style="margin: 0; color: #CFC6B5">[الأيام]</p>
-<p style="margin: 0; font-family: 'El Messiri', serif; font-weight: 700; font-size: 34px; color: #E8A04A">[السعر] ر.ع</p>
-<p style="margin: 0; color: #CFC6B5">[وقت الدخول] – [وقت الخروج]</p>
-</div>
-<div style="background: #20252E; border-radius: 22px; padding: 30px; display: flex; flex-direction: column; gap: 10px">
-<h3 style="margin: 0; font-size: 22px; font-weight: 700">المناسبات الخاصة</h3>
-<p style="margin: 0; color: #CFC6B5">حجز كامل للمخيم</p>
-<p style="margin: 0; font-family: 'El Messiri', serif; font-weight: 700; font-size: 34px; color: #E8A04A">حسب الطلب</p>
-<p style="margin: 0; color: #CFC6B5">تواصل معنا للتفاصيل</p>
-</div>
-</div>
-</div>
-</section>
+<a class="wa-float" href="https://wa.me/96897663361" aria-label="احجز عبر واتساب"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.7 14.9L2 22l5.3-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3.1.8.8-3-.2-.3A8 8 0 1 1 12 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1-.6.8-.8.9-.3.2-.5 0a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.7-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3z"/></svg>احجز واتساب</a>
 
-<section id="contact" style="padding: 80px 24px">
-<div style="max-width: 1160px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 40px">
-<img loading="lazy" src="img/logofire.webp" alt="شعار مخيم البهاء فوق شبّة النار" style="flex: 0 1 300px; width: 300px; max-width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 24px; display: block">
-<div style="flex: 1 1 340px; display: flex; flex-direction: column; gap: 16px">
-<h2 style="margin: 0; font-family: 'El Messiri', serif; font-weight: 700; font-size: clamp(30px, 4vw, 44px); line-height: 1.3">احجز ليلتك في البهاء</h2>
-<p style="margin: 0; color: #CFC6B5; max-width: 480px">الأماكن محدودة في موسم الشتاء. راسلنا على واتساب لاختيار الجلسة والتاريخ وتأكيد الحجز.</p>
-<div style="display: flex; flex-direction: column; gap: 10px; margin-top: 4px">
-<div style="display: flex; align-items: center; gap: 10px"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8A04A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4 H9 L11 9 L8.5 10.5 C9.5 12.5 11.5 14.5 13.5 15.5 L15 13 L20 15 V19 C20 20 19 21 18 21 C10 20.5 3.5 14 3 6 C3 5 4 4 5 4 Z"></path></svg><span style="direction: ltr; font-weight: 700; font-size: 20px">9766 3361</span></div>
-<div style="display: flex; align-items: center; gap: 10px"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8A04A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22 C17 16 19 13 19 9.5 A7 7 0 0 0 5 9.5 C5 13 7 16 12 22 Z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg><span style="color: #CFC6B5">[الولاية / المنطقة]</span></div>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="عرض الصور">
+ <button class="lb-close" type="button" id="lbClose" aria-label="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+ <div class="car" id="lbCar"><div class="car-track" id="lbTrack"></div></div>
 </div>
-<div style="display: flex; flex-wrap: wrap; gap: 14px; margin-top: 8px">
-<a href="https://wa.me/96897663361" style="background: #E8A04A; color: #111419; text-decoration: none; font-weight: 700; font-size: 18px; padding: 14px 32px; border-radius: 999px">احجز عبر واتساب</a>
-<a href="https://www.instagram.com/camp.albahaa" style="border: 1.5px solid #4A5466; color: #F3EBDD; text-decoration: none; font-weight: 500; font-size: 18px; padding: 13px 28px; border-radius: 999px; direction: ltr">@camp.albahaa</a>
-<a href="#contact" style="border: 1.5px solid #4A5466; color: #F3EBDD; text-decoration: none; font-weight: 500; font-size: 18px; padding: 13px 28px; border-radius: 999px">[رابط الموقع على الخريطة]</a>
-</div>
-</div>
-</div>
-</section>
 
-<footer style="border-top: 1px solid #232A35; padding: 28px 24px; text-align: center; color: #B9B0A0; font-size: 15px">مخيم البهاء · AL BAHAA CAMP · ٢٠٢٦</footer>
-
-</div>
-<a class="wa-float" href="https://wa.me/96897663361">احجز واتساب</a>
 <script>
+(function(){
+var GALLERY=[
+ ['img/majlis-wide.webp','المجلس الكبير'],['img/majlis-front.webp','واجهة المجلس الكبير'],['img/redtent.webp','بيت الشعر'],
+ ['img/white-suite.webp','الجناح الأبيض'],['img/quiet-corner.webp','الركن الهادئ'],['img/pink.webp','ركن المناسبات'],
+ ['img/swing.webp','مرجيحة قوس الورد'],['img/majlis2.webp','مجلس الحديقة'],['img/majlis-side.webp','المجلس الكبير وشاشة العرض'],
+ ['img/majlis-night.webp','المجلس الكبير ليلاً'],['img/quiet-corner2.webp','فانوس الركن الهادئ'],['img/sign.webp','لوحة الترحيب'],['img/logo-fire.webp','شبّة النار']
+];
+var ARR_R='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>';
+var ARR_L='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>';
+function toAr(n){return String(n).replace(/\d/g,function(d){return '٠١٢٣٤٥٦٧٨٩'[d]})}
+
+/* header */
+var top=document.getElementById('top');
+function onScroll(){top.classList.toggle('solid',window.scrollY>40)}
+window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+/* build gallery + lightbox */
+var gT=document.getElementById('galTrack'),lT=document.getElementById('lbTrack'),th=document.getElementById('thumbs');
+GALLERY.forEach(function(g,i){
+ var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','تكبير: '+g[1]);
+ b.innerHTML='<img src="'+g[0]+'" alt="'+g[1]+'"'+(i?' loading="lazy"':'')+'>';
+ b.onclick=function(){openLB(i)};gT.appendChild(b);
+ var d=document.createElement('div');d.innerHTML='<img src="'+g[0]+'" alt="'+g[1]+'" loading="lazy">';lT.appendChild(d);
+ var t=document.createElement('button');t.type='button';t.setAttribute('aria-label','الصورة '+(i+1)+': '+g[1]);
+ t.innerHTML='<img src="'+g[0]+'" alt="" loading="lazy">';t.onclick=function(){galApi.go(i)};th.appendChild(t);
+});
+
+/* carousel engine (RTL aware) */
+function carousel(root,opts){
+ opts=opts||{};
+ var track=root.querySelector('.car-track'),items=track.children,n=items.length,idx=0;
+ if(n<2){root.classList.add('single')}
+ var prev=document.createElement('button'),next=document.createElement('button');
+ prev.className='car-btn prev';next.className='car-btn next';prev.type=next.type='button';
+ prev.setAttribute('aria-label','الصورة السابقة');next.setAttribute('aria-label','الصورة التالية');
+ prev.innerHTML=ARR_R;next.innerHTML=ARR_L;
+ var dots=document.createElement('div');dots.className='car-dots';
+ var cnt=document.createElement('div');cnt.className='car-count';
+ for(var i=0;i<n;i++)dots.appendChild(document.createElement('i'));
+ root.appendChild(prev);root.appendChild(next);if(n<=12)root.appendChild(dots);root.appendChild(cnt);
+ var rtl=getComputedStyle(track).direction==='rtl';
+ function go(i,smooth){i=Math.max(0,Math.min(n-1,i));var w=track.clientWidth;track.scrollTo({left:(rtl?-1:1)*i*w,behavior:smooth===false?'auto':'smooth'})}
+ function upd(){var w=track.clientWidth||1;var i=Math.round(Math.abs(track.scrollLeft)/w);if(i!==idx||!upd.done){idx=i;upd.done=1;
+  [].forEach.call(dots.children,function(d,k){d.classList.toggle('on',k===idx)});
+  cnt.textContent=toAr(idx+1)+' / '+toAr(n);prev.disabled=idx===0;next.disabled=idx===n-1;
+  if(opts.onChange)opts.onChange(idx)}}
+ var raf;track.addEventListener('scroll',function(){cancelAnimationFrame(raf);raf=requestAnimationFrame(upd)},{passive:true});
+ prev.onclick=function(){go(idx-1)};next.onclick=function(){go(idx+1)};
+ root.tabIndex=-1;
+ root.addEventListener('keydown',function(e){if(e.key==='ArrowLeft'){go(idx+1);e.preventDefault()}else if(e.key==='ArrowRight'){go(idx-1);e.preventDefault()}});
+ window.addEventListener('resize',function(){go(idx,false)});
+ upd();
+ return {go:go,get i(){return idx},root:root};
+}
+document.querySelectorAll('.space [data-car]').forEach(function(c){
+ carousel(c);
+ c.querySelectorAll('img').forEach(function(im){im.addEventListener('click',function(){
+  var k=GALLERY.findIndex(function(g){return g[0]===im.getAttribute('src')});if(k>=0)openLB(k)})});
+});
+var galApi=carousel(document.getElementById('galCar'),{onChange:function(i){
+ [].forEach.call(th.children,function(t,k){t.classList.toggle('on',k===i)});
+ var t=th.children[i];if(t){var r=t.getBoundingClientRect(),p=th.getBoundingClientRect();if(r.left<p.left||r.right>p.right)th.scrollBy({left:(r.left+r.width/2)-(p.left+p.width/2),behavior:'smooth'})}
+}});
+var lb=document.getElementById('lb'),lbApi=carousel(document.getElementById('lbCar'));
+var lastFocus;
+function openLB(i){lastFocus=document.activeElement;lb.classList.add('open');document.body.style.overflow='hidden';requestAnimationFrame(function(){lbApi.go(i,false);document.getElementById('lbClose').focus()})}
+function closeLB(){lb.classList.remove('open');document.body.style.overflow='';galApi.go(lbApi.i,false);if(lastFocus)lastFocus.focus()}
+document.getElementById('lbClose').onclick=closeLB;
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&lb.classList.contains('open'))closeLB()});
+lb.addEventListener('keydown',function(e){if(e.key==='ArrowLeft')lbApi.go(lbApi.i+1);else if(e.key==='ArrowRight')lbApi.go(lbApi.i-1)});
+
+/* reels */
+var MUTED='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H3v6h3l5 4z"/><path d="M22 9l-6 6M16 9l6 6"/></svg>';
+var SOUND='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg>';
+var reels=[].slice.call(document.querySelectorAll('.reel'));
+reels.forEach(function(r){
+ var v=r.querySelector('video'),s=r.querySelector('.snd');s.innerHTML=MUTED;r.classList.add('paused');
+ s.onclick=function(e){e.stopPropagation();var un=v.muted;
+  reels.forEach(function(o){var ov=o.querySelector('video');if(ov!==v){ov.muted=true;o.querySelector('.snd').innerHTML=MUTED;o.querySelector('.snd').setAttribute('aria-label','تشغيل الصوت')}});
+  v.muted=!un;s.innerHTML=un?SOUND:MUTED;s.setAttribute('aria-label',un?'كتم الصوت':'تشغيل الصوت');if(un&&v.paused)v.play()};
+ v.onclick=function(){if(v.paused){v.play();r.userPaused=false}else{v.pause();r.userPaused=true}};
+ v.onplay=function(){r.classList.remove('paused')};v.onpause=function(){r.classList.add('paused')};
+});
+if('IntersectionObserver' in window){
+ var io=new IntersectionObserver(function(es){es.forEach(function(e){var r=e.target,v=r.querySelector('video');
+  if(e.isIntersecting&&e.intersectionRatio>.6){if(!r.userPaused){var p=v.play();if(p&&p.catch)p.catch(function(){})}}else if(!v.paused){v.pause()}})},{threshold:[0,.6,1]});
+ reels.forEach(function(r){io.observe(r)});
+}
+var hv=document.getElementById('heroVid');if(hv){var hp=hv.play();if(hp&&hp.catch)hp.catch(function(){})}
+})();
+
+/* booking calendar (reads Google Sheet) */
 (function(){
 var SHEET='1AjkBk-za4Zcdh5C0OWOXiupXxVEVEEnas-KJgYrUzFY', WA='96897663361';
 var MONTHS=['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
