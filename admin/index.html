@@ -36,7 +36,7 @@
 
   <!-- الطلبات -->
   <div id="pReq">
-   <div class="alert info" style="font-size:14px">طلبات الزبائن من الموقع. الفترة محجوزة لهم مبدئياً (برتقالي) حتى تؤكد بعد وصول العربون، أو ترفض فترجع متاحة.</div>
+   <div class="alert info" style="font-size:14px">طلبات الزبائن من الموقع. لا تدخل جدول الحجوزات إلا عندما تضغط "تأكيد" بعد وصول العربون.</div>
    <div id="reqList"><div class="empty">جاري التحميل…</div></div>
    <button class="btn btn-ghost" id="reload" type="button" style="min-height:46px">تحديث القائمة</button>
   </div>
@@ -146,7 +146,7 @@ function renderReqs(){
   var acts=document.createElement('div');
   if(r._done){
    acts.className='stack';
-   acts.innerHTML='<div style="color:'+(r._done==='ok'?'#7FD3A4':'#F2A09B')+';font-weight:700">'+(r._done==='ok'?'تم تأكيد الحجز ✓':'تم رفض الطلب، والفترة رجعت متاحة')+'</div>';
+   acts.innerHTML='<div style="color:'+(r._done==='ok'?'#7FD3A4':'#F2A09B')+';font-weight:700">'+(r._done==='ok'?'تم تأكيد الحجز وإضافته للجدول ✓':'تم رفض الطلب')+'</div>';
    var link=waLink(r.phone,r._done==='ok'?confirmMsg(r):rejectMsg(r));
    if(link)acts.innerHTML+='<a class="btn btn-wa" style="min-height:46px;font-size:15px" target="_blank" rel="noopener" href="'+link+'">'+(r._done==='ok'?'إرسال تأكيد للزبون في واتساب':'إبلاغ الزبون في واتساب')+'</a>';
   }else{
@@ -161,9 +161,17 @@ function renderReqs(){
   el.appendChild(acts);$('reqList').appendChild(el);
  });
 }
-function act(kind,r,btn,label){
+function act(kind,r,btn,label,force){
  AB.busy(btn,true,label);
- AB.call(kind,{pin:pin,id:r.id},function(){r._done=kind==='confirm'?'ok':'no';renderReqs()},
+ var p={pin:pin,id:r.id};if(force)p.force=true;
+ AB.call(kind,p,function(res){
+  if(res&&res.conflict){
+   AB.busy(btn,false,label);
+   if(r._err){r._err.innerHTML='هذه الفترة محجوزة'+(res.by?' باسم <b>'+AB.esc(res.by)+'</b>':'')+' في الجدول. ';
+    var f=document.createElement('button');f.type='button';f.className='small-link';f.style.margin='0';f.textContent='تأكيد رغم ذلك';
+    f.onclick=function(){act(kind,r,btn,label,true)};r._err.appendChild(f)}
+   return}
+  r._done=kind==='confirm'?'ok':'no';renderReqs()},
   function(m){AB.busy(btn,false,label);if(r._err)r._err.textContent=m});
 }
 $('reload').onclick=loadReqs;
