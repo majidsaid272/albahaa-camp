@@ -73,7 +73,7 @@
     <p style="margin:6px 0 0;color:var(--muted);font-size:14px" id="doneText"></p>
     <div class="sum" id="sum"></div>
     <div class="stack">
-     <a class="btn btn-wa hide" id="waConfirm" href="#" target="_blank" rel="noopener">إرسال تأكيد للزبون في واتساب</a>
+     <div id="waConfirm"></div>
      <button class="btn btn-ghost" id="again" type="button">رجوع</button>
     </div>
    </div>
@@ -98,7 +98,21 @@ function confirmMsg(d){
 function rejectMsg(d){
  return 'السلام عليكم '+d.name+'،\nبخصوص طلب حجزكم في مخيم البهاء يوم '+AB.dateLabel(d.date)+' (الفترة '+AB.PNAME[d.period]+')، نعتذر لم يتم تأكيد الحجز لعدم وصول العربون. يسعدنا حجزكم في وقت آخر.';
 }
-function waLink(phone,msg){var p=AB.phoneIntl(phone);return p.length>=10?'https://wa.me/'+p+'?text='+encodeURIComponent(msg):''}
+var isAndroid=/Android/i.test(navigator.userAgent);
+function waLink(phone,msg){var p=AB.phoneIntl(phone);if(p.length<10)return '';
+ return isAndroid?'whatsapp://send?phone='+p+'&text='+encodeURIComponent(msg):'https://wa.me/'+p+'?text='+encodeURIComponent(msg)}
+function waBtns(phone,msg,label){
+ var link=waLink(phone,msg);if(!link)return '';
+ return '<div class="row2"><a class="btn btn-wa" style="min-height:48px;font-size:15px" href="'+link+'">'+label+'</a>'
+  +'<button type="button" class="btn btn-ghost copy-msg" style="min-height:48px;font-size:15px" data-msg="'+AB.esc(msg)+'">نسخ الرسالة</button></div>';
+}
+document.addEventListener('click',function(e){
+ var b=e.target.closest&&e.target.closest('.copy-msg');if(!b)return;
+ var t=b.getAttribute('data-msg');
+ function ok(){b.textContent='تم النسخ ✓';setTimeout(function(){b.textContent='نسخ الرسالة'},2500)}
+ function fb(){var ta=document.createElement('textarea');ta.value=t;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();try{document.execCommand('copy');ok()}catch(x){b.textContent='تعذّر النسخ'}ta.remove()}
+ try{navigator.clipboard.writeText(t).then(ok,fb)}catch(x){fb()}
+});
 
 /* PIN */
 function tryPin(v,silent){
@@ -141,14 +155,13 @@ function renderReqs(){
   var el=document.createElement('div');el.className='req'+(r._done?' done':'');
   var tel=AB.phoneIntl(r.phone);
   el.innerHTML='<h3>'+AB.esc(r.name)+'</h3><div class="meta">'+AB.dateLabel(r.date)+'<br>الفترة '+AB.PNAME[r.period]+' · '+AB.ar(r.price)+' ريال'
-   +'<br>الهاتف: <a href="https://wa.me/'+tel+'" target="_blank" rel="noopener">'+AB.esc(r.phone)+'</a>'
+   +'<br>الهاتف: <a href="'+(isAndroid?'whatsapp://send?phone='+tel:'https://wa.me/'+tel)+'">'+AB.esc(r.phone)+'</a>'
    +(r.note?'<br>ملاحظة: '+AB.esc(r.note):'')+'<br><small style="color:var(--dim)">رقم الطلب <span dir="ltr">'+AB.esc(r.id)+'</span></small></div>';
   var acts=document.createElement('div');
   if(r._done){
    acts.className='stack';
    acts.innerHTML='<div style="color:'+(r._done==='ok'?'#7FD3A4':'#F2A09B')+';font-weight:700">'+(r._done==='ok'?'تم تأكيد الحجز وإضافته للجدول ✓':'تم رفض الطلب')+'</div>';
-   var link=waLink(r.phone,r._done==='ok'?confirmMsg(r):rejectMsg(r));
-   if(link)acts.innerHTML+='<a class="btn btn-wa" style="min-height:46px;font-size:15px" target="_blank" rel="noopener" href="'+link+'">'+(r._done==='ok'?'إرسال تأكيد للزبون في واتساب':'إبلاغ الزبون في واتساب')+'</a>';
+   acts.innerHTML+=waBtns(r.phone,r._done==='ok'?confirmMsg(r):rejectMsg(r),r._done==='ok'?'إرسال التأكيد':'إبلاغ الزبون');
   }else{
    acts.className='acts';
    var ok=document.createElement('button');ok.className='btn btn-green';ok.type='button';ok.textContent='تأكيد (وصل العربون)';
@@ -222,8 +235,7 @@ $('forceNo').onclick=function(){$('conflict').classList.add('hide')};
 function done(title,text,d,price){
  $('doneTitle').textContent=title;$('doneText').textContent=text;
  $('sum').innerHTML=(d.name?'<b>'+AB.esc(d.name)+'</b><br>':'')+AB.dateLabel(d.date)+'<br>الفترة '+AB.PNAME[d.period]+' ('+AB.PTIME[d.period]+')'+(price!=null?'<br>السعر: '+AB.ar(price)+' ريال عُماني':'');
- var link=price!=null?waLink(d.phone,confirmMsg({name:d.name,date:d.date,period:d.period,price:price})):'';
- $('waConfirm').classList.toggle('hide',!link);if(link)$('waConfirm').href=link;
+ $('waConfirm').innerHTML=price!=null?waBtns(d.phone,confirmMsg({name:d.name,date:d.date,period:d.period,price:price}),'إرسال التأكيد'):'';
  $('vForm').classList.add('hide');$('vDone').classList.remove('hide');window.scrollTo(0,0);
 }
 $('again').onclick=function(){['name','phone','note'].forEach(function(i){$(i).value=''});period='';setTab(tab)};
