@@ -1,6 +1,6 @@
 /* اتصال صفحات الحجز بـ Apps Script — بدون ملفات تعريف الارتباط، مع بديل JSONP */
 window.AB = (function(){
- var API='https://script.google.com/macros/s/AKfycbytNRT0OlvcO-4gl8a70Ptw0sSzeoFOyvUt2TooHrIJJedHy4laXk7mLRMUWNgOy2i8/exec';
+ var API='https://script.google.com/macros/s/AKfycbwOGKBm3I7JCAxDSn4WghaTMl2HwjzN-xa05gj3dk-U1geaCEei6wa34F7YnENuPa3n3Q/exec';
  var WA='96897663361';
  var transport=null,n=0;
  var DAYS=['الأحد','الاثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];

@@ -172,7 +172,7 @@ section{scroll-margin-top:72px}
 .cal-day.empty{background:transparent;cursor:default}
 .bars{display:flex;flex-direction:column;gap:3px;width:70%}
 .bars i{display:block;height:5px;border-radius:3px}
-.free{background:var(--green)}.booked{background:var(--red)}
+.free{background:var(--green)}.booked{background:var(--red)}.pend{background:#F0A045}
 .cal-legend{display:flex;flex-wrap:wrap;gap:16px;margin-top:14px;color:var(--muted);font-size:14px;align-items:center}
 .dot{display:inline-block;width:12px;height:12px;border-radius:3px;margin-left:6px;vertical-align:-1px}
 .cal-status{margin:10px 0 0;color:var(--dim);font-size:14px}
@@ -469,7 +469,7 @@ footer{border-top:1px solid var(--line);padding:26px 22px calc(26px + env(safe-a
 
 <section class="sec" id="booking">
  <div class="wrap">
-  <div class="sec-head"><div><span class="eyebrow">التوفر والحجز</span><h2>اختر اليوم والفترة</h2><p>فترتان يومياً: صباحية ومسائية. اضغط على اليوم لترى الفترات المتاحة واحجز مباشرة عبر واتساب.</p><p class="times">الفترة الصباحية: من ٩ صباحاً إلى ٣ عصراً<br>الفترة المسائية: من ٥ مساءً إلى ١١ ليلاً</p></div></div>
+  <div class="sec-head"><div><span class="eyebrow">التوفر والحجز</span><h2>اختر اليوم والفترة</h2><p>فترتان يومياً: صباحية ومسائية. اضغط على اليوم لترى الفترات المتاحة واحجز مباشرة من الموقع.</p><p class="times">الفترة الصباحية: من ٩ صباحاً إلى ٣ عصراً<br>الفترة المسائية: من ٥ مساءً إلى ١١ ليلاً</p></div></div>
   <div class="cal-wrap">
    <div class="cal">
     <div class="cal-head">
@@ -479,7 +479,7 @@ footer{border-top:1px solid var(--line);padding:26px 22px calc(26px + env(safe-a
     </div>
     <div class="cal-week"><span>أحد</span><span>اثنين</span><span>ثلاثاء</span><span>أربعاء</span><span>خميس</span><span>جمعة</span><span>سبت</span></div>
     <div id="calGrid" class="cal-grid"></div>
-    <div class="cal-legend"><span><i class="dot free"></i>متاح</span><span><i class="dot booked"></i>محجوز</span><span>الشريط العلوي: الصباح · السفلي: المساء</span></div>
+    <div class="cal-legend"><span><i class="dot free"></i>متاح</span><span><i class="dot booked"></i>محجوز</span><span><i class="dot pend"></i>محجوز مبدئياً</span><span>الشريط العلوي: الصباح · السفلي: المساء</span></div>
     <p id="calStatus" class="cal-status">جاري تحميل الحجوزات…</p>
    </div>
    <div class="cal-panel" id="calPanel">
@@ -626,6 +626,7 @@ var DAYS=['الأحد','الاثنين','الثلاثاء','الأربعاء','�
 var booked={}, today=new Date(); today.setHours(0,0,0,0);
 var view=new Date(today.getFullYear(),today.getMonth(),1), sel=null;
 function key(d){return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2)}
+function isPend(v){return /انتظار|مبدئي/.test(String(v==null?'':v))}
 function isBooked(v){v=String(v==null?'':v).trim();return v!==''&&!/^(متاح|فاضي|لا|no|false|0)$/i.test(v)}
 function toAr(n){return String(n).replace(/\d/g,function(d){return '٠١٢٣٤٥٦٧٨٩'[d]})}
 function parseDate(c){
@@ -635,6 +636,7 @@ function parseDate(c){
   m=v.trim().match(/^(\d{1,2})[-\/.](\d{1,2})[-\/.](\d{4})$/); if(m)return new Date(+m[3],m[2]-1,+m[1]);}
  if(typeof v==='number'){var d=new Date(Date.UTC(1899,11,30)+v*864e5);return new Date(d.getUTCFullYear(),d.getUTCMonth(),d.getUTCDate())}
  return null}
+function cls(v){return v==='p'?'pend':v?'booked':'free'}
 function render(){
  var t=document.getElementById('calTitle'),g=document.getElementById('calGrid');
  t.textContent=MONTHS[view.getMonth()]+' '+toAr(view.getFullYear());
@@ -648,7 +650,7 @@ function render(){
   btn.className='cal-day'+(past?' past':'')+(sel===k?' sel':'');
   btn.disabled=past;
   btn.setAttribute('aria-label',DAYS[dt.getDay()]+' '+d+' '+MONTHS[dt.getMonth()]+': الصباح '+(b.am?'محجوز':'متاح')+'، المساء '+(b.pm?'محجوز':'متاح'));
-  btn.innerHTML='<span>'+toAr(d)+'</span>'+(past?'':'<span class="bars"><i class="'+(b.am?'booked':'free')+'"></i><i class="'+(b.pm?'booked':'free')+'"></i></span>');
+  btn.innerHTML='<span>'+toAr(d)+'</span>'+(past?'':'<span class="bars"><i class="'+cls(b.am)+'"></i><i class="'+cls(b.pm)+'"></i></span>');
   btn.onclick=(function(dt,k){return function(){sel=k;render();panel(dt)}})(dt,k);
   g.appendChild(btn)}
 }
@@ -657,11 +659,11 @@ function slot(name,isB,dt){
  var msg='السلام عليكم، أرغب بحجز الفترة ال'+name+'ية في مخيم البهاء يوم '+label+'. هل متاحة؟';
  var pr=([4,5,6].indexOf(dt.getDay())>=0)?'٥٠ ر.ع':'٣٥ ر.ع';
  var tm=name==='صباح'?'من ٩ صباحاً إلى ٣ عصراً':'من ٥ مساءً إلى ١١ ليلاً';
- return '<div class="slot"><b>الفترة ال'+name+'ية<small style="display:block;font-weight:400;font-size:13px;color:var(--dim)">'+tm+'</small></b>'+(pr&&!isB?'<span class="pr">'+pr+'</span>':'')+(isB?'<span class="tag">محجوزة</span>':'<a href="https://wa.me/'+WA+'?text='+encodeURIComponent(msg)+'" target="_blank" rel="noopener">احجز</a>')+'</div>'}
+ return '<div class="slot"><b>الفترة ال'+name+'ية<small style="display:block;font-weight:400;font-size:13px;color:var(--dim)">'+tm+'</small></b>'+(pr&&!isB?'<span class="pr">'+pr+'</span>':'')+(isB?'<span class="tag">'+(isB==='p'?'محجوزة مبدئياً':'محجوزة')+'</span>':'<a href="book/?date='+key(dt)+'&p='+(name==='صباح'?'am':'pm')+'">احجز</a>')+'</div>'}
 function panel(dt){
  var b=booked[key(dt)]||{};
  document.getElementById('panelDate').textContent=DAYS[dt.getDay()]+' '+toAr(dt.getDate())+' '+MONTHS[dt.getMonth()];
- document.getElementById('panelHint').textContent=(b.am&&b.pm)?'هذا اليوم محجوز بالكامل، اختر يوماً آخر.':'اضغط "احجز" لإرسال طلبك عبر واتساب.';
+ document.getElementById('panelHint').textContent=(b.am&&b.pm)?'هذا اليوم محجوز بالكامل، اختر يوماً آخر.':'اضغط "احجز" لتعبئة بياناتك وتأكيد الحجز.';
  document.getElementById('panelSlots').innerHTML=slot('صباح',b.am,dt)+slot('مسائ',b.pm,dt);
  if(window.innerWidth<720)document.getElementById('calPanel').scrollIntoView({behavior:'smooth',block:'nearest'})}
 window.__albahaaSheet=function(res){
@@ -671,7 +673,7 @@ window.__albahaaSheet=function(res){
    if(/تاريخ/.test(l)||c.type==='date')iD=i; else if(/صباح/.test(l))iA=i; else if(/مساء/.test(l))iP=i});
   rows.forEach(function(r){var c=r.c||[];var dt=parseDate(c[iD]);if(!dt)return;
    var k=key(dt), cur=booked[k]||{};
-   if(c[iA]&&isBooked(c[iA].v))cur.am=true; if(c[iP]&&isBooked(c[iP].v))cur.pm=true; booked[k]=cur});
+   if(c[iA]&&isBooked(c[iA].v))cur.am=isPend(c[iA].v)?'p':true; if(c[iP]&&isBooked(c[iP].v))cur.pm=isPend(c[iP].v)?'p':true; booked[k]=cur});
   document.getElementById('calStatus').textContent='يتم تحديث الحجوزات باستمرار. للتأكيد النهائي تواصل معنا عبر واتساب.';
  }catch(e){fail()}
  render(); if(sel){var p=sel.split('-');panel(new Date(+p[0],p[1]-1,+p[2]))}
