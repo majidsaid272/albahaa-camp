@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0E1117">
+<title>احجز في مخيم البهاء</title>
+<meta name="description" content="احجز فترتك في مخيم البهاء: اختر التاريخ والفترة وأرسل طلبك.">
+<meta property="og:title" content="احجز في مخيم البهاء">
+<meta property="og:description" content="اختر التاريخ والفترة، ويتأكد حجزك بعد دفع العربون.">
+<meta property="og:image" content="https://majidsaid272.github.io/albahaa-camp/img/og.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@600;700&family=Tajawal:wght@400;500;700;800&display=swap">
+<link rel="stylesheet" href="../assets/booking.css">
+</head>
+<body>
+<div class="wrap">
+ <a class="head" href="../">
+  <div class="logo"><svg viewBox="0 0 36 36" fill="none" stroke="#E8A04A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 L4 30 H32 Z"/><path d="M13 30 L18 20 L23 30"/></svg></div>
+  <div><h1>احجز في مخيم البهاء</h1><p>المخيم كاملاً لك ولضيوفك</p></div>
+ </a>
+
+ <section class="card" id="vForm">
+  <div class="f"><label class="l" for="name">الاسم</label><input id="name" autocomplete="name" placeholder="اسمك الكريم"><div class="err" id="eName"></div></div>
+  <div class="f"><label class="l" for="phone">رقم الواتساب</label><input id="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="9XXXXXXX" dir="ltr" style="text-align:right"><div class="err" id="ePhone"></div></div>
+  <div class="f"><label class="l" for="date">التاريخ</label><input id="date" type="date"><div class="err" id="eDate"></div></div>
+  <div class="f"><label class="l">الفترة</label>
+   <div class="seg">
+    <button type="button" data-p="am"><b>الصباحية</b><small>٩ ص – ٣ ع</small><span class="st" id="sAm"></span></button>
+    <button type="button" data-p="pm"><b>المسائية</b><small>٥ م – ١١ م</small><span class="st" id="sPm"></span></button>
+   </div>
+   <div class="err" id="ePer"></div>
+  </div>
+  <div class="f"><div class="pricebox"><span>السعر للمخيم كاملاً</span><b id="price">—</b></div></div>
+  <div class="f"><label class="l" for="note">ملاحظة (اختياري)</label><textarea id="note" placeholder="مثلاً: عدد الأشخاص، مناسبة عيد ميلاد"></textarea></div>
+  <input class="hp" id="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+  <div class="alert warn" id="depositNote"></div>
+  <div class="err" id="eSave" style="margin-bottom:10px"></div>
+  <button class="btn btn-gold" id="save" type="button">تأكيد الحجز</button>
+ </section>
+
+ <section class="card center hide" id="vDone">
+  <div class="ok-ico pend"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+  <h2 style="font-family:'El Messiri',serif;margin:0;font-size:23px">تم استلام طلب حجزك</h2>
+  <p style="margin:6px 0 0;color:var(--muted);font-size:15px">حُجزت الفترة لك مبدئياً، ويتأكد الحجز بعد دفع العربون.</p>
+  <div class="sum" id="sum"></div>
+  <div class="alert warn" id="depositNote2" style="text-align:right"></div>
+  <div class="stack">
+   <a class="btn btn-wa" id="waSend" href="#" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.7 14.9L2 22l5.3-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3.1.8.8-3-.2-.3A8 8 0 1 1 12 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1-.6.8-.8.9-.3.2-.5 0a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.7-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3z"/></svg>
+    أرسل طلبك لنا عبر واتساب</a>
+   <p class="hint" style="margin:0">اضغط الزر وأرسل الرسالة الجاهزة، حتى نؤكد حجزك بسرعة.</p>
+   <a class="btn btn-ghost" href="../">العودة لموقع المخيم</a>
+  </div>
+ </section>
+</div>
+
+<script src="../assets/booking-api.js"></script>
+<script>
+(function(){
+/* ===== رقم دفع العربون: اكتبه هنا عندما يصل (مثلاً '9XXXXXXX') ===== */
+var DEPOSIT_TO='';
+var DEPOSIT_TEXT=DEPOSIT_TO
+ ? 'يتم تأكيد الحجز بعد دفع العربون إلى الرقم <b dir="ltr">'+DEPOSIT_TO+'</b>.'
+ : 'يتم تأكيد الحجز بعد دفع العربون. سنرسل لك رقم الدفع عبر واتساب.';
+var $=function(id){return document.getElementById(id)};
+$('depositNote').innerHTML=DEPOSIT_TEXT;$('depositNote2').innerHTML=DEPOSIT_TEXT;
+
+var period='',status={},reqId=0;
+var segs=document.querySelectorAll('.seg button');
+function stOf(p){return status.loading?'loading':(status[p+'State']||(status[p]?'booked':'free'))}
+function paint(){
+ segs.forEach(function(b){var p=b.dataset.p,s=stOf(p);b.classList.toggle('on',p===period);b.classList.toggle('off',s==='booked'||s==='pending');});
+ [['am','sAm'],['pm','sPm']].forEach(function(x){var el=$(x[1]),s=stOf(x[0]);
+  if(s==='loading'){el.className='st';el.textContent='…';return}
+  el.className='st '+(s==='free'?'free':s==='pending'?'pend':'busy');
+  el.textContent=s==='free'?'متاحة':s==='pending'?'محجوزة مبدئياً':'محجوزة'});
+ $('price').textContent=status.price?AB.ar(status.price)+' ريال':'—';
+}
+segs.forEach(function(b){b.onclick=function(){
+ var s=stOf(b.dataset.p);
+ if(s==='booked'||s==='pending'){$('ePer').textContent='هذه الفترة محجوزة، اختر فترة أو يوماً آخر';return}
+ period=b.dataset.p;$('ePer').textContent='';paint()}});
+function refresh(){
+ var v=$('date').value;if(!v)return;var id=++reqId;status={loading:true};paint();
+ AB.call('status',{date:v},function(r){if(id!==reqId)return;status=r;
+   if(period&&(r[period+'State']||'free')!=='free')period='';paint()},
+  function(m){if(id!==reqId)return;status={};paint();$('eDate').textContent=m});
+}
+$('date').onchange=function(){$('eDate').textContent='';refresh()};
+['name','phone'].forEach(function(i){$(i).oninput=function(){$('e'+i.charAt(0).toUpperCase()+i.slice(1)).textContent=''}});
+
+$('save').onclick=function(){
+ ['eName','ePhone','eDate','ePer','eSave'].forEach(function(i){$(i).textContent=''});
+ var name=$('name').value.trim(),phone=$('phone').value.trim(),date=$('date').value,ok=true;
+ if(!name){$('eName').textContent='اكتب اسمك';ok=false}
+ if(phone.replace(/\D/g,'').length<8){$('ePhone').textContent='اكتب رقم واتساب صحيح';ok=false}
+ if(!date){$('eDate').textContent='اختر التاريخ';ok=false}
+ else if(date<AB.today()){$('eDate').textContent='اختر تاريخاً قادماً';ok=false}
+ if(!period){$('ePer').textContent='اختر الفترة';ok=false}
+ if(!ok)return;
+ var btn=$('save');AB.busy(btn,true,'تأكيد الحجز');
+ AB.call('request',{name:name,phone:phone,date:date,period:period,note:$('note').value.trim(),website:$('website').value},function(r){
+  AB.busy(btn,false,'تأكيد الحجز');
+  if(r.taken){$('eSave').textContent='عذراً، حُجزت هذه الفترة للتو. اختر فترة أو يوماً آخر.';period='';refresh();return}
+  done({name:name,phone:phone,date:date,period:period,price:r.price,id:r.id,note:$('note').value.trim()});
+ },function(m){AB.busy(btn,false,'تأكيد الحجز');$('eSave').textContent=m});
+};
+
+function done(d){
+ $('sum').innerHTML='<b>'+AB.esc(d.name)+'</b><br>'+AB.dateLabel(d.date)+'<br>الفترة '+AB.PNAME[d.period]+' ('+AB.PTIME[d.period]+')<br>السعر: '+AB.ar(d.price)+' ريال عُماني<br>رقم الطلب: <span dir="ltr">'+d.id+'</span>';
+ var msg='السلام عليكم، حجزت في مخيم البهاء:\n'
+  +'الاسم: '+d.name+'\n'
+  +'التاريخ: '+AB.dateLabel(d.date)+'\n'
+  +'الفترة: '+AB.PNAME[d.period]+' ('+AB.PTIME[d.period]+')\n'
+  +'السعر: '+d.price+' ريال\n'
+  +'رقمي: '+d.phone+'\n'
+  +'رقم الطلب: '+d.id
+  +(d.note?'\nملاحظة: '+d.note:'')
+  +'\nأرجو تأكيد الحجز وإرسال طريقة دفع العربون.';
+ $('waSend').href='https://wa.me/'+AB.WA+'?text='+encodeURIComponent(msg);
+ $('vForm').classList.add('hide');$('vDone').classList.remove('hide');window.scrollTo(0,0);
+}
+
+/* init: التاريخ والفترة من رابط التقويم */
+var q=new URLSearchParams(location.search),qd=q.get('date'),qp=q.get('p');
+$('date').min=AB.today();
+$('date').value=(qd&&/^\d{4}-\d{2}-\d{2}$/.test(qd)&&qd>=AB.today())?qd:AB.today();
+if(qp==='am'||qp==='pm')period=qp;
+paint();refresh();
+})();
+</script>
+</body>
+</html>

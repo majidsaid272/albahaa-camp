@@ -5,67 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#0E1117">
-<title>تسجيل حجز — مخيم البهاء</title>
+<title>إدارة الحجوزات — مخيم البهاء</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@600;700&family=Tajawal:wght@400;500;700;800&display=swap">
-<style>
-:root{--bg:#0E1117;--card:#1A202B;--card2:#222937;--line:#2E3748;--text:#F4ECDF;--muted:#C9BFAE;--dim:#9E9586;--gold:#E8A04A;--gold2:#F3C27E;--green:#4CAF7A;--red:#E0625C}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);font-family:'Tajawal',system-ui,sans-serif;font-size:16px;line-height:1.6;-webkit-text-size-adjust:100%}
-.wrap{max-width:480px;margin:0 auto;padding:18px 16px 40px}
-.head{display:flex;align-items:center;gap:12px;margin-bottom:18px}
-.logo{width:46px;height:46px;border-radius:14px;background:rgba(232,160,74,.15);display:grid;place-items:center;flex:none}
-.logo svg{width:28px;height:28px}
-.head h1{font-family:'El Messiri',serif;font-size:21px;margin:0;line-height:1.2}
-.head p{margin:0;color:var(--dim);font-size:13px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px}
-.tabs{display:grid;grid-template-columns:1fr 1fr;gap:6px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:5px;margin-bottom:14px}
-.tabs button{height:42px;border:0;border-radius:10px;background:transparent;color:var(--muted);font:inherit;font-weight:700;cursor:pointer}
-.tabs button.on{background:var(--gold);color:#111419}
-label.l{display:block;font-size:14px;color:var(--muted);margin:0 0 6px;font-weight:500}
-.f{margin-bottom:14px}
-input,textarea{width:100%;height:50px;border-radius:12px;border:1.5px solid var(--line);background:var(--card2);color:var(--text);font:inherit;font-size:17px;padding:0 14px;outline:none;-webkit-appearance:none;appearance:none}
-input:focus,textarea:focus{border-color:var(--gold)}
-input[type=date]{direction:rtl;text-align:right;color-scheme:dark}
-textarea{height:76px;padding:12px 14px;resize:none}
-.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.seg{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.seg button{min-height:72px;border-radius:14px;border:1.5px solid var(--line);background:var(--card2);color:var(--text);font:inherit;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:8px}
-.seg button b{font-size:17px}
-.seg button small{font-size:12px;color:var(--dim)}
-.seg button .st{font-size:12px;font-weight:700;border-radius:99px;padding:1px 10px;margin-top:2px}
-.st.free{background:rgba(76,175,122,.18);color:#7FD3A4}.st.busy{background:rgba(224,98,92,.18);color:#F2A09B}
-.seg button.on{border:2px solid var(--gold);background:rgba(232,160,74,.12)}
-.err{color:#F2A09B;font-size:13.5px;margin-top:6px;min-height:0}
-.btn{width:100%;min-height:54px;border-radius:14px;border:0;font:inherit;font-size:17px;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none}
-.btn-gold{background:var(--gold);color:#111419}
-.btn-ghost{background:transparent;color:var(--text);border:1.5px solid var(--line)}
-.btn-wa{background:#25D366;color:#06301A}
-.btn-red{background:#B23B36;color:#fff}
-.btn[disabled]{opacity:.55}
-.hint{color:var(--dim);font-size:13px;margin-top:6px}
-.price{display:flex;align-items:center;gap:10px}
-.price input{width:110px;text-align:center;font-weight:800;color:var(--gold2)}
-.price span{color:var(--muted)}
-.alert{border-radius:14px;padding:14px;margin-bottom:14px;font-size:15px}
-.alert.warn{background:rgba(232,160,74,.12);border:1px solid rgba(232,160,74,.45)}
-.ok-ico{width:64px;height:64px;border-radius:50%;background:rgba(76,175,122,.18);color:#7FD3A4;display:grid;place-items:center;margin:4px auto 12px}
-.ok-ico svg{width:32px;height:32px}
-.sum{background:var(--card2);border-radius:14px;padding:12px 14px;line-height:2;margin:14px 0}
-.sum b{color:var(--gold2)}
-.sheet-link{margin-top:16px;color:#7FD3A4;border-color:rgba(76,175,122,.45)}
-.hide{display:none!important}
-.stack{display:flex;flex-direction:column;gap:10px}
-.center{text-align:center}
-.small-link{background:none;border:0;color:var(--dim);font:inherit;font-size:13px;text-decoration:underline;cursor:pointer;margin-top:18px}
-.spin{width:18px;height:18px;border:2.5px solid rgba(0,0,0,.25);border-top-color:#111419;border-radius:50%;animation:s .8s linear infinite}
-@keyframes s{to{transform:rotate(360deg)}}
-</style>
+<link rel="stylesheet" href="../assets/booking.css">
 </head>
 <body>
 <div class="wrap">
  <div class="head">
   <div class="logo"><svg viewBox="0 0 36 36" fill="none" stroke="#E8A04A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 L4 30 H32 Z"/><path d="M13 30 L18 20 L23 30"/></svg></div>
-  <div><h1>مخيم البهاء</h1><p>تسجيل الحجوزات · خاص بالإدارة</p></div>
+  <div><h1>مخيم البهاء</h1><p>إدارة الحجوزات · خاص</p></div>
  </div>
 
  <!-- PIN -->
@@ -78,187 +27,203 @@ textarea{height:76px;padding:12px 14px;resize:none}
   <p class="hint center">يُحفظ الرقم على هذا الجهاز، فلا تحتاج كتابته كل مرة.</p>
  </section>
 
- <!-- MAIN -->
  <section id="vMain" class="hide">
   <div class="tabs" role="tablist">
-   <button type="button" class="on" id="tNew" role="tab">حجز جديد</button>
-   <button type="button" id="tCancel" role="tab">إلغاء حجز</button>
+   <button type="button" class="on" data-t="req" role="tab">الطلبات <span class="badge hide" id="cnt">0</span></button>
+   <button type="button" data-t="new" role="tab">حجز جديد</button>
+   <button type="button" data-t="cancel" role="tab">إلغاء حجز</button>
   </div>
 
-  <div class="card" id="vForm">
-   <div class="f" id="fName"><label class="l" for="name">اسم الزبون</label><input id="name" autocomplete="off" placeholder="محمد سالم"><div class="err" id="eName"></div></div>
-   <div class="f" id="fPhone"><label class="l" for="phone">رقم الهاتف</label><input id="phone" type="tel" inputmode="numeric" placeholder="9XXXXXXX" dir="ltr" style="text-align:right"></div>
-   <div class="f"><label class="l" for="date">التاريخ</label><input id="date" type="date"><div class="err" id="eDate"></div></div>
-   <div class="f"><label class="l">الفترة</label>
-    <div class="seg">
-     <button type="button" data-p="am"><b>الصباحية</b><small>٩ ص – ٣ ع</small><span class="st" id="sAm"></span></button>
-     <button type="button" data-p="pm"><b>المسائية</b><small>٥ م – ١١ م</small><span class="st" id="sPm"></span></button>
+  <!-- الطلبات -->
+  <div id="pReq">
+   <div class="alert info" style="font-size:14px">طلبات الزبائن من الموقع. الفترة محجوزة لهم مبدئياً (برتقالي) حتى تؤكد بعد وصول العربون، أو ترفض فترجع متاحة.</div>
+   <div id="reqList"><div class="empty">جاري التحميل…</div></div>
+   <button class="btn btn-ghost" id="reload" type="button" style="min-height:46px">تحديث القائمة</button>
+  </div>
+
+  <!-- حجز جديد / إلغاء -->
+  <div id="pForm" class="hide">
+   <div class="card" id="vForm">
+    <div class="f" id="fName"><label class="l" for="name">اسم الزبون</label><input id="name" autocomplete="off" placeholder="محمد سالم"><div class="err" id="eName"></div></div>
+    <div class="f" id="fPhone"><label class="l" for="phone">رقم الهاتف</label><input id="phone" type="tel" inputmode="numeric" placeholder="9XXXXXXX" dir="ltr" style="text-align:right"></div>
+    <div class="f"><label class="l" for="date">التاريخ</label><input id="date" type="date"><div class="err" id="eDate"></div></div>
+    <div class="f"><label class="l">الفترة</label>
+     <div class="seg">
+      <button type="button" data-p="am"><b>الصباحية</b><small>٩ ص – ٣ ع</small><span class="st" id="sAm"></span></button>
+      <button type="button" data-p="pm"><b>المسائية</b><small>٥ م – ١١ م</small><span class="st" id="sPm"></span></button>
+     </div>
+     <div class="err" id="ePer"></div>
     </div>
-    <div class="err" id="ePer"></div>
+    <div class="f" id="fPrice"><label class="l" for="price">السعر</label>
+     <div class="price"><input id="price" type="number" inputmode="numeric" min="0"><span>ريال عُماني</span></div>
+     <div class="hint">يُحسب تلقائياً حسب اليوم، وتستطيع تعديله (مثلاً العطل الرسمية ٧٠).</div>
+    </div>
+    <div class="f"><label class="l" for="note" id="noteLbl">ملاحظة (اختياري)</label><textarea id="note" placeholder="عيد ميلاد، دفع عربون ١٠ ريال"></textarea></div>
+    <div class="alert warn hide" id="conflict">
+     <b>هذه الفترة محجوزة أو عليها طلب.</b><br>هل تريد تسجيل الحجز عليها على أي حال؟
+     <div class="row2" style="margin-top:12px"><button class="btn btn-gold" id="forceYes" type="button" style="min-height:46px">نعم، سجّل</button><button class="btn btn-ghost" id="forceNo" type="button" style="min-height:46px">لا</button></div>
+    </div>
+    <div class="err" id="eSave" style="margin-bottom:10px"></div>
+    <button class="btn btn-gold" id="save" type="button">حفظ الحجز</button>
    </div>
-   <div class="f" id="fPrice"><label class="l" for="price">السعر</label>
-    <div class="price"><input id="price" type="number" inputmode="numeric" min="0"><span>ريال عُماني</span></div>
-    <div class="hint" id="priceHint">يُحسب تلقائياً حسب اليوم، وتستطيع تعديله (مثلاً العطل الرسمية ٧٠).</div>
-   </div>
-   <div class="f"><label class="l" for="note" id="noteLbl">ملاحظة (اختياري)</label><textarea id="note" placeholder="عيد ميلاد، دفع عربون ١٠ ريال"></textarea></div>
 
-   <div class="alert warn hide" id="conflict">
-    <b>هذه الفترة محجوزة مسبقاً.</b><br>هل تريد تسجيل الحجز عليها على أي حال؟
-    <div class="row2" style="margin-top:12px"><button class="btn btn-gold" id="forceYes" type="button" style="min-height:46px">نعم، سجّل</button><button class="btn btn-ghost" id="forceNo" type="button" style="min-height:46px">لا</button></div>
+   <div class="card center hide" id="vDone">
+    <div class="ok-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></div>
+    <h2 style="font-family:'El Messiri',serif;margin:0;font-size:22px" id="doneTitle">تم حفظ الحجز</h2>
+    <p style="margin:6px 0 0;color:var(--muted);font-size:14px" id="doneText"></p>
+    <div class="sum" id="sum"></div>
+    <div class="stack">
+     <a class="btn btn-wa hide" id="waConfirm" href="#" target="_blank" rel="noopener">إرسال تأكيد للزبون في واتساب</a>
+     <button class="btn btn-ghost" id="again" type="button">رجوع</button>
+    </div>
    </div>
-   <div class="err" id="eSave" style="margin-bottom:10px"></div>
-   <button class="btn btn-gold" id="save" type="button">حفظ الحجز</button>
   </div>
 
-  <div class="card center hide" id="vDone">
-   <div class="ok-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></div>
-   <h2 style="font-family:'El Messiri',serif;margin:0;font-size:22px" id="doneTitle">تم حفظ الحجز</h2>
-   <p style="margin:6px 0 0;color:var(--muted);font-size:14px" id="doneText">سُجّل في الجدول، وتظهر الفترة محجوزة في الموقع خلال دقائق.</p>
-   <div class="sum" id="sum" style="text-align:right"></div>
-   <div class="stack">
-    <a class="btn btn-wa hide" id="waConfirm" href="#" target="_blank" rel="noopener">إرسال تأكيد للزبون في واتساب</a>
-    <button class="btn btn-ghost" id="again" type="button">تسجيل حجز آخر</button>
-   </div>
-  </div>
   <a class="btn btn-ghost sheet-link" href="https://docs.google.com/spreadsheets/d/1AjkBk-za4Zcdh5C0OWOXiupXxVEVEEnas-KJgYrUzFY/edit" target="_blank" rel="noopener">
-  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M3 15h18M9 3v18"/></svg>
-  جدول الحجوزات</a>
- <div class="center"><button class="small-link" id="logout" type="button">تسجيل الخروج من هذا الجهاز</button></div>
+   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M3 15h18M9 3v18"/></svg>
+   جدول الحجوزات</a>
+  <div class="center"><button class="small-link" id="logout" type="button">تسجيل الخروج من هذا الجهاز</button></div>
  </section>
 </div>
 
+<script src="../assets/booking-api.js"></script>
 <script>
 (function(){
 var $=function(id){return document.getElementById(id)};
-var DAYS=['الأحد','الاثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];
-var MONTHS=['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
-var PNAME={am:'الصباحية',pm:'المسائية'},PTIME={am:'من ٩ صباحاً إلى ٣ عصراً',pm:'من ٥ مساءً إلى ١١ ليلاً'};
-var pin='',mode='new',period='',status={am:false,pm:false},reqId=0;
-function ar(s){return String(s).replace(/\d/g,function(d){return '٠١٢٣٤٥٦٧٨٩'[d]})}
-function store(k,v){try{if(v===null)localStorage.removeItem(k);else localStorage.setItem(k,v)}catch(e){}}
-function load(k){try{return localStorage.getItem(k)}catch(e){return null}}
-var API='https://script.google.com/macros/s/AKfycbytNRT0OlvcO-4gl8a70Ptw0sSzeoFOyvUt2TooHrIJJedHy4laXk7mLRMUWNgOy2i8/exec';
-var ACT={verifyPin:'verify',getStatus:'status',saveBooking:'save',cancelBooking:'cancel'};
-var jsonpN=0,transport=null;
-function jsonp(url,cb,fail){
- var name='__ab_cb'+(++jsonpN)+'_'+Date.now(),s=document.createElement('script'),done=false;
- var t=setTimeout(function(){if(!done){done=true;cleanup();fail('تعذّر الاتصال، تأكد من الإنترنت وحاول مرة أخرى')}},25000);
- function cleanup(){clearTimeout(t);try{delete window[name]}catch(e){window[name]=undefined}if(s.parentNode)s.parentNode.removeChild(s)}
- window[name]=function(j){if(done)return;done=true;cleanup();cb(j)};
- s.onerror=function(){if(done)return;done=true;cleanup();fail('تعذّر الاتصال، تأكد من الإنترنت وحاول مرة أخرى')};
- s.src=url+'&callback='+name;document.body.appendChild(s);
+var pin='',tab='req',period='',status={},reqId=0,reqs=[];
+
+function confirmMsg(d){
+ return 'السلام عليكم '+d.name+'،\nتم تأكيد حجزكم في مخيم البهاء:\n'+AB.dateLabel(d.date)+'\nالفترة '+AB.PNAME[d.period]+' ('+AB.PTIME[d.period]+')\nالسعر: '+d.price+' ريال عُماني\nحيّاكم الله.';
 }
-function call(fn,args,ok,fail){
- var p={action:ACT[fn],pin:args[0]};
- if(typeof args[1]==='string')p.date=args[1];
- else if(args[1])Object.keys(args[1]).forEach(function(k){p[k]=String(args[1][k]==null?'':args[1][k])});
- p.t=Date.now();
- var url=API+'?'+new URLSearchParams(p).toString();
- function handle(j){if(!j)fail('حدث خطأ، حاول مرة أخرى');else if(j.error)fail(j.error);else ok(j.data)}
- var safe=(p.action==='verify'||p.action==='status');
- if(window.fetch&&transport!=='jsonp'){
-  fetch(url,{credentials:'omit',redirect:'follow',cache:'no-store'})
-   .then(function(r){if(!r.ok)throw 0;return r.json()})
-   .then(function(j){transport='fetch';handle(j)},function(){
-     if(safe){transport='jsonp';jsonp(url,handle,fail)}
-     else fail('تعذّر التأكد من الحفظ. افتح الجدول وتأكد قبل المحاولة مرة أخرى');
-   });
- }else jsonp(url,handle,fail);
+function rejectMsg(d){
+ return 'السلام عليكم '+d.name+'،\nبخصوص طلب حجزكم في مخيم البهاء يوم '+AB.dateLabel(d.date)+' (الفترة '+AB.PNAME[d.period]+')، نعتذر لم يتم تأكيد الحجز لعدم وصول العربون. يسعدنا حجزكم في وقت آخر.';
 }
-function busy(btn,on,label){btn.disabled=on;btn.innerHTML=on?'<span class="spin"></span>':label}
-function todayStr(){var d=new Date();return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2)}
-function dateLabel(s){var p=s.split('-'),d=new Date(+p[0],p[1]-1,+p[2]);return DAYS[d.getDay()]+' '+ar(+p[2])+' '+MONTHS[p[1]-1]+' '+ar(p[0])}
+function waLink(phone,msg){var p=AB.phoneIntl(phone);return p.length>=10?'https://wa.me/'+p+'?text='+encodeURIComponent(msg):''}
 
 /* PIN */
 function tryPin(v,silent){
- busy($('pinBtn'),true,'دخول');
- call('verifyPin',[v],function(){pin=v;store('albahaa_pin',v);$('vPin').classList.add('hide');$('vMain').classList.remove('hide');refresh()},
-  function(m){busy($('pinBtn'),false,'دخول');store('albahaa_pin',null);if(!silent)$('pinErr').textContent=m});
+ AB.busy($('pinBtn'),true,'دخول');
+ AB.call('verify',{pin:v},function(){pin=v;AB.store('albahaa_pin',v);$('vPin').classList.add('hide');$('vMain').classList.remove('hide');loadReqs()},
+  function(m){AB.busy($('pinBtn'),false,'دخول');AB.store('albahaa_pin',null);if(!silent)$('pinErr').textContent=m});
 }
 $('pinBtn').onclick=function(){var v=$('pin').value.trim();if(!v){$('pinErr').textContent='اكتب الرقم السري';return}tryPin(v)};
 $('pin').onkeydown=function(e){if(e.key==='Enter')$('pinBtn').click()};
 $('pin').oninput=function(){$('pinErr').textContent=''};
-$('logout').onclick=function(){store('albahaa_pin',null);location.reload()};
+$('logout').onclick=function(){AB.store('albahaa_pin',null);location.reload()};
 
 /* tabs */
-function setMode(m){
- mode=m;$('tNew').classList.toggle('on',m==='new');$('tCancel').classList.toggle('on',m==='cancel');
- ['fPhone','fPrice'].forEach(function(id){$(id).classList.toggle('hide',m==='cancel')});
- $('fName').querySelector('label').textContent=m==='cancel'?'اسم الزبون (اختياري)':'اسم الزبون';
- $('noteLbl').textContent=m==='cancel'?'سبب الإلغاء (اختياري)':'ملاحظة (اختياري)';
- $('note').placeholder=m==='cancel'?'الزبون اعتذر':'عيد ميلاد، دفع عربون ١٠ ريال';
- $('save').className='btn '+(m==='cancel'?'btn-red':'btn-gold');
- $('save').textContent=m==='cancel'?'إلغاء الحجز':'حفظ الحجز';
- clearErr();$('conflict').classList.add('hide');paintSeg();
+document.querySelectorAll('.tabs button').forEach(function(b){b.onclick=function(){setTab(b.dataset.t)}});
+function setTab(t){
+ tab=t;document.querySelectorAll('.tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.t===t)});
+ $('pReq').classList.toggle('hide',t!=='req');$('pForm').classList.toggle('hide',t==='req');
+ if(t==='req'){loadReqs();return}
+ $('vDone').classList.add('hide');$('vForm').classList.remove('hide');
+ var c=t==='cancel';
+ ['fPhone','fPrice'].forEach(function(id){$(id).classList.toggle('hide',c)});
+ $('fName').querySelector('label').textContent=c?'اسم الزبون (اختياري)':'اسم الزبون';
+ $('noteLbl').textContent=c?'سبب الإلغاء (اختياري)':'ملاحظة (اختياري)';
+ $('note').placeholder=c?'الزبون اعتذر':'عيد ميلاد، دفع عربون ١٠ ريال';
+ $('save').className='btn '+(c?'btn-red':'btn-gold');$('save').textContent=c?'إلغاء الحجز':'حفظ الحجز';
+ clearErr();$('conflict').classList.add('hide');refresh();
 }
-$('tNew').onclick=function(){setMode('new')};$('tCancel').onclick=function(){setMode('cancel')};
 
-/* period + status */
+/* requests */
+function loadReqs(){
+ $('reqList').innerHTML='<div class="empty">جاري التحميل…</div>';
+ AB.call('pending',{pin:pin},function(list){reqs=list||[];renderReqs()},function(m){if(/غير معروف/.test(m))m='يلزم تحديث كود Apps Script إلى الإصدار ٣ حتى تظهر طلبات الزبائن هنا.';$('reqList').innerHTML='<div class="empty">'+AB.esc(m)+'</div>'});
+}
+function renderReqs(){
+ var open=reqs.filter(function(r){return !r._done});
+ $('cnt').textContent=AB.ar(open.length);$('cnt').classList.toggle('hide',!open.length);
+ if(!reqs.length){$('reqList').innerHTML='<div class="empty">لا توجد طلبات بانتظار العربون.</div>';return}
+ $('reqList').innerHTML='';
+ reqs.forEach(function(r,i){
+  var el=document.createElement('div');el.className='req'+(r._done?' done':'');
+  var tel=AB.phoneIntl(r.phone);
+  el.innerHTML='<h3>'+AB.esc(r.name)+'</h3><div class="meta">'+AB.dateLabel(r.date)+'<br>الفترة '+AB.PNAME[r.period]+' · '+AB.ar(r.price)+' ريال'
+   +'<br>الهاتف: <a href="https://wa.me/'+tel+'" target="_blank" rel="noopener">'+AB.esc(r.phone)+'</a>'
+   +(r.note?'<br>ملاحظة: '+AB.esc(r.note):'')+'<br><small style="color:var(--dim)">رقم الطلب <span dir="ltr">'+AB.esc(r.id)+'</span></small></div>';
+  var acts=document.createElement('div');
+  if(r._done){
+   acts.className='stack';
+   acts.innerHTML='<div style="color:'+(r._done==='ok'?'#7FD3A4':'#F2A09B')+';font-weight:700">'+(r._done==='ok'?'تم تأكيد الحجز ✓':'تم رفض الطلب، والفترة رجعت متاحة')+'</div>';
+   var link=waLink(r.phone,r._done==='ok'?confirmMsg(r):rejectMsg(r));
+   if(link)acts.innerHTML+='<a class="btn btn-wa" style="min-height:46px;font-size:15px" target="_blank" rel="noopener" href="'+link+'">'+(r._done==='ok'?'إرسال تأكيد للزبون في واتساب':'إبلاغ الزبون في واتساب')+'</a>';
+  }else{
+   acts.className='acts';
+   var ok=document.createElement('button');ok.className='btn btn-green';ok.type='button';ok.textContent='تأكيد (وصل العربون)';
+   var no=document.createElement('button');no.className='btn btn-ghost';no.type='button';no.textContent='رفض';
+   ok.onclick=function(){act('confirm',r,ok,'تأكيد (وصل العربون)')};
+   no.onclick=function(){if(no.dataset.sure!=='1'){no.dataset.sure='1';no.textContent='متأكد؟ اضغط مرة ثانية';return}act('reject',r,no,'رفض')};
+   acts.appendChild(ok);acts.appendChild(no);
+   var e=document.createElement('div');e.className='err';e.style.gridColumn='1/-1';acts.appendChild(e);r._err=e;
+  }
+  el.appendChild(acts);$('reqList').appendChild(el);
+ });
+}
+function act(kind,r,btn,label){
+ AB.busy(btn,true,label);
+ AB.call(kind,{pin:pin,id:r.id},function(){r._done=kind==='confirm'?'ok':'no';renderReqs()},
+  function(m){AB.busy(btn,false,label);if(r._err)r._err.textContent=m});
+}
+$('reload').onclick=loadReqs;
+
+/* form (new / cancel) */
 var segs=document.querySelectorAll('.seg button');
-segs.forEach(function(b){b.onclick=function(){period=b.dataset.p;$('ePer').textContent='';$('conflict').classList.add('hide');paintSeg()}});
-function paintSeg(){
- segs.forEach(function(b){var p=b.dataset.p;b.classList.toggle('on',p===period)});
- [['am','sAm'],['pm','sPm']].forEach(function(x){var el=$(x[1]);if(status.loading){el.className='st';el.textContent='…';return}
-  el.className='st '+(status[x[0]]?'busy':'free');el.textContent=status[x[0]]?'محجوزة':'متاحة'});
+segs.forEach(function(b){b.onclick=function(){period=b.dataset.p;$('ePer').textContent='';$('conflict').classList.add('hide');paint()}});
+function stOf(p){return status.loading?'loading':(status[p+'State']||(status[p]?'booked':'free'))}
+function paint(){
+ segs.forEach(function(b){b.classList.toggle('on',b.dataset.p===period)});
+ [['am','sAm'],['pm','sPm']].forEach(function(x){var el=$(x[1]),s=stOf(x[0]);
+  if(s==='loading'){el.className='st';el.textContent='…';return}
+  el.className='st '+(s==='free'?'free':s==='pending'?'pend':'busy');
+  el.textContent=s==='free'?'متاحة':s==='pending'?'بانتظار العربون':'محجوزة'});
 }
 function refresh(){
- var v=$('date').value;if(!v)return;var id=++reqId;status={loading:true};paintSeg();
- call('getStatus',[pin,v],function(r){if(id!==reqId)return;status=r;paintSeg();$('price').value=r.price},
-  function(m){if(id!==reqId)return;status={am:false,pm:false};paintSeg();$('eDate').textContent=m});
+ var v=$('date').value;if(!v)return;var id=++reqId;status={loading:true};paint();
+ AB.call('status',{pin:pin,date:v},function(r){if(id!==reqId)return;status=r;paint();$('price').value=r.price},
+  function(m){if(id!==reqId)return;status={};paint();$('eDate').textContent=m});
 }
 $('date').onchange=function(){$('eDate').textContent='';$('conflict').classList.add('hide');refresh()};
 $('name').oninput=function(){$('eName').textContent=''};
-
 function clearErr(){['eName','eDate','ePer','eSave'].forEach(function(i){$(i).textContent=''})}
-
-/* save / cancel */
 function submit(force){
  clearErr();
- var name=$('name').value.trim(),date=$('date').value,ok=true;
- if(mode==='new'&&!name){$('eName').textContent='اكتب اسم الزبون';ok=false}
+ var name=$('name').value.trim(),date=$('date').value,ok=true,c=tab==='cancel';
+ if(!c&&!name){$('eName').textContent='اكتب اسم الزبون';ok=false}
  if(!date){$('eDate').textContent='اختر التاريخ';ok=false}
  if(!period){$('ePer').textContent='اختر الفترة';ok=false}
  if(!ok)return;
- var data={name:name,phone:$('phone').value.trim(),date:date,period:period,price:$('price').value,note:$('note').value.trim(),force:!!force};
- var label=$('save').textContent;busy($('save'),true,label);$('conflict').classList.add('hide');
- if(mode==='new'){
-  call('saveBooking',[pin,data],function(r){
-   busy($('save'),false,label);
+ var d={pin:pin,name:name,phone:$('phone').value.trim(),date:date,period:period,price:$('price').value,note:$('note').value.trim(),force:!!force};
+ var label=$('save').textContent;AB.busy($('save'),true,label);$('conflict').classList.add('hide');
+ if(!c){
+  AB.call('save',d,function(r){AB.busy($('save'),false,label);
    if(r.conflict){$('conflict').classList.remove('hide');return}
-   done('تم حفظ الحجز','سُجّل في الجدول، وتظهر الفترة محجوزة في الموقع خلال دقائق.',data,r.price);
-  },function(m){busy($('save'),false,label);$('eSave').textContent=m});
+   done('تم حفظ الحجز','سُجّل مؤكداً في الجدول، ويظهر محجوزاً في الموقع خلال دقائق.',d,r.price)},
+   function(m){AB.busy($('save'),false,label);$('eSave').textContent=m});
  }else{
-  call('cancelBooking',[pin,data],function(r){
-   busy($('save'),false,label);
+  AB.call('cancel',d,function(r){AB.busy($('save'),false,label);
    if(r.notBooked){$('eSave').textContent='هذه الفترة غير محجوزة أصلاً.';return}
-   done('تم إلغاء الحجز','رجعت الفترة "متاحة" في الجدول والموقع خلال دقائق.',data,null);
-  },function(m){busy($('save'),false,label);$('eSave').textContent=m});
+   done('تم إلغاء الحجز','رجعت الفترة متاحة في الجدول والموقع خلال دقائق.',d,null)},
+   function(m){AB.busy($('save'),false,label);$('eSave').textContent=m});
  }
 }
 $('save').onclick=function(){submit(false)};
 $('forceYes').onclick=function(){submit(true)};
 $('forceNo').onclick=function(){$('conflict').classList.add('hide')};
-
 function done(title,text,d,price){
  $('doneTitle').textContent=title;$('doneText').textContent=text;
- $('sum').innerHTML=(d.name?'<b>'+d.name.replace(/</g,'&lt;')+'</b><br>':'')+dateLabel(d.date)+'<br>الفترة '+PNAME[d.period]+' ('+PTIME[d.period]+')'+(price!=null?'<br>السعر: '+ar(price)+' ريال عُماني':'');
- var wa=$('waConfirm'),ph=(d.phone||'').replace(/\D/g,'');
- if(mode==='new'&&ph.length>=8){
-  if(ph.length===8)ph='968'+ph;
-  var msg='السلام عليكم '+d.name+'،\nتم تأكيد حجزكم في مخيم البهاء:\n'+dateLabel(d.date)+'\nالفترة '+PNAME[d.period]+' ('+PTIME[d.period]+')\nالسعر: '+price+' ريال عُماني\nحيّاكم الله.';
-  wa.href='https://wa.me/'+ph+'?text='+encodeURIComponent(msg);wa.classList.remove('hide');
- }else wa.classList.add('hide');
+ $('sum').innerHTML=(d.name?'<b>'+AB.esc(d.name)+'</b><br>':'')+AB.dateLabel(d.date)+'<br>الفترة '+AB.PNAME[d.period]+' ('+AB.PTIME[d.period]+')'+(price!=null?'<br>السعر: '+AB.ar(price)+' ريال عُماني':'');
+ var link=price!=null?waLink(d.phone,confirmMsg({name:d.name,date:d.date,period:d.period,price:price})):'';
+ $('waConfirm').classList.toggle('hide',!link);if(link)$('waConfirm').href=link;
  $('vForm').classList.add('hide');$('vDone').classList.remove('hide');window.scrollTo(0,0);
 }
-$('again').onclick=function(){
- ['name','phone','note'].forEach(function(i){$(i).value=''});period='';
- $('vDone').classList.add('hide');$('vForm').classList.remove('hide');refresh();
-};
+$('again').onclick=function(){['name','phone','note'].forEach(function(i){$(i).value=''});period='';setTab(tab)};
 
 /* init */
-$('date').value=todayStr();$('date').min=todayStr();
-var saved=load('albahaa_pin');if(saved){$('pin').value=saved;tryPin(saved,true)}
-paintSeg();
+$('date').value=AB.today();$('date').min=AB.today();
+var saved=AB.load('albahaa_pin');if(saved){$('pin').value=saved;tryPin(saved,true)}
+paint();
 })();
 </script>
 </body>
